@@ -1,1 +1,15 @@
-All ideas are welcome! Below, feel free to add how you think the "flow" of the program should go.
+Below, feel free to edit how you think the design of the program should go.
+
+I have begun to design which classes will have to be created, but since the design isn't complete yet, none of this is set in stone.
+
+
+Autonomous:
+
+
+Teleop:
+
+
+Classes/Libraries used and implemented in Autonomous mode ( created by us to make life easier when initializing everything in main program ):
+  -Ultrasonic/Distance sensor
+  -Color sensor
+  -( Possible, not set in stone ) Touch sensor
