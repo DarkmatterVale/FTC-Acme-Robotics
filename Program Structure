@@ -1,15 +1,21 @@
 Below, feel free to edit how you think the design of the program should go.
-
-I have begun to design which classes will have to be created, but since the design isn't complete yet, none of this is set in stone.
+I have begun to design which classes will have to be created, but since the competition isn't soon none of this is set in stone.
 
 
 Autonomous:
+  -Main
+  -Ultrasonic/Distance sensor
+  -Color sensor
+  -( Possible ) Touch Sensor
+
+  Classes/Libraries needed to be created for Autonomous mode:
+    -Ultrasonic/Distance sensor
+    -Color sensor
+    -( Possible, not set in stone ) Touch sensor
+  
+    We would design these classes. By doing this, we can compartmentalize the program, making it easier to debug and potentially expand.
+    This is not set in stone, but it would be best to have the program as compartmentalized as possible.
 
 
 Teleop:
-
-
-Classes/Libraries used and implemented in Autonomous mode ( created by us to make life easier when initializing everything in main program ):
-  -Ultrasonic/Distance sensor
-  -Color sensor
-  -( Possible, not set in stone ) Touch sensor
+  -Main
