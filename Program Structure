@@ -8,12 +8,14 @@ Autonomous:
   -Color sensor
   -( Possible ) Touch Sensor
   -IR sensor
+  -Gyroscope
 
   Classes/Libraries needed to be created for Autonomous mode:
     -Ultrasonic/Distance sensor
     -Color sensor
     -( Possible, not set in stone ) Touch sensor
     -IR sensor
+    -Gyroscope
   
     We would design these classes. By doing this, we can compartmentalize the program, making it easier to debug and potentially expand.
     This is not set in stone, but it would be best to have the program as compartmentalized as possible.
