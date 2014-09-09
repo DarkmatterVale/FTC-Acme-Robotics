@@ -41,6 +41,7 @@ Autonomous:
     -3 Axis Accelerometer
     -Manipulator 1
     -Manipulator 2
+    -Encoder
   
     We would design these classes. By doing this, we can compartmentalize the program, making it easier to debug and potentially expand.
     This is not set in stone, but it would be best to have the program as compartmentalized as possible.
