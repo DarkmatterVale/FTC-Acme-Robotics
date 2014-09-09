@@ -49,3 +49,9 @@ Autonomous:
 
 Teleop:
   -Main
+    -Move Robot Forward ( Method/Function )
+    -Move Robot Left ( Method/Function )
+    -Move Robot Right ( Method/Function )
+    -Move Robot Backward ( Method/Function )
+    -Move Manipulator 1 ( Method/Function )
+    -Move Manipulator 2 ( Method/Function )
