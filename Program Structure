@@ -4,10 +4,14 @@ I have begun to design which classes will have to be created, but since the comp
 
 Autonomous:
   -Main
-    -Move Robot Left ( Method/Function )
+    -Move Robot Left No-arg ( Method/Function )
+    -Move Robot Left Arg ( Method/Function )
     -Move Robot Right ( Method/Function )
-    -Move Robot Forward ( Method/Function )
-    -Move Robot Backward ( Method/Function )
+    -Move Robot Right Arg ( Method/Function )
+    -Move Robot Forward No-arg ( Method/Function )
+    -Move Robot Forward Arg ( Method/Function )
+    -Move Robot Backward No-arg ( Method/Function )
+    -Move Robot Backward Arg ( Method/Function )
     -Initialize Robot ( Method/Function )
     -Main ( Method/Function )
     -Move Manipulator 1 ( Method/Function )
