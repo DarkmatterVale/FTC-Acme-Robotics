@@ -10,15 +10,20 @@ void MoveRobotForward( int speed ) //function for moving robot forward at a cert
   motor[rightRobotMotor] = speed;
 }
 
-void MoveRobotForward( int speed, int timeToMove ) //function for moving robot forward at a certain speed and for a certain amount of time
+void MoveRobotForward( int speed, int encoderValue ) //function for moving robot forward at a certain speed and for a certain amount of time
 {
   motor[leftRobotMotor] = 0; //stopping motors to eliminate course deviations
   motor[rightRobotMotor] = 0;
   wait1Msec( 50 );
   
-  motor[leftRobotMotor] = speed; //setting motors to passed speed variable power level
-  motor[rightRobotMotor] = speed;
-  wait1Msec( timeToMove ); //moving as long as as value passed
+  nMotorEncoder[leftRobotMotor] = 0; //resetting encoder values
+  nMotorEncoder[rightRobotMotor] = 0;
+  
+  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //while encoders have not moved past allowed distance
+  {
+    motor[leftRobotMotor] = speed; //setting motors to passed speed variable power level
+    motor[rightRobotMotor] = speed;
+  }
   
   motor[leftRobotMotor] = 0; //stopping motors after movement duration has occurred
   motor[rightRobotMotor] = 0;
@@ -34,15 +39,20 @@ void MoveRobotLeft( int speed ) //function for turning the robot left at the pas
   motor[rightRobotMotor] = speed;
 }
 
-void MoveRobotLeft( int speed, int timeToMove ) //function for turning the robot left at a passed speed value for a certain amount of time
+void MoveRobotLeft( int speed, int encoderValue ) //function for turning the robot left at a passed speed value for a certain amount of time
 {
   motor[leftRobotMotor] = 0; //stopping motors to prevent course deviations
   motor[rightRobotMotor] = 0;
   wait1Msec( 50 );
   
-  motor[leftRobotMotor] = -speed; //setting motors to turn left
-  motor[rightRobotMotor] = speed;
-  wait1Msec( timeToMove );
+  nMotorEncoder[leftRobotMotor] = 0; //resetting encoder values
+  nMotorEncoder[rightRobotMotor] = 0;
+  
+  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //while encoders have not moved past allowed distance
+  {
+    motor[leftRobotMotor] = -speed; //setting motors to passed speed variable power level
+    motor[rightRobotMotor] = speed;
+  }
   
   motor[leftRobotMotor] = 0; //stopping motors after the robots have moved for the set amount of time
   motor[rightRobotMotor] = 0;
