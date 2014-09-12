@@ -1,15 +1,15 @@
 //Put main code for Autonomous Program
 
-void MoveRobotForward()
+void MoveRobotForward( int speed )
 {
-  motor[leftRobotMotor] = 75;
-  motor[rightRobotMotor] = 75;
+  motor[leftRobotMotor] = speed;
+  motor[rightRobotMotor] = speed;
 }
 
-void MoveRobotForward( int timeToMove )
+void MoveRobotForward( int speed, int timeToMove )
 {
-  motor[leftRobotMotor] = 75;
-  motor[rightRobotMotor] = 75;
+  motor[leftRobotMotor] = speed;
+  motor[rightRobotMotor] = speed;
   wait1Msec( timeToMove );
   motor[leftRobotMotor] = 0;
   motor[rightRobotMotor] = 0;
