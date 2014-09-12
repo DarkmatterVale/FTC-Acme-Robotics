@@ -4,8 +4,8 @@ I have begun to design which classes will have to be created, but since the comp
 
 Autonomous:
   -Main
-    -Move Robot Left ( Method/Function )
-    -Move Robot Left w/ Time Parameter( Method/Function )
+    -Move Robot Left ( Method/Function ) ( COMPLETED )
+    -Move Robot Left w/ Time Parameter( Method/Function ) ( COMPLETED )
     -Move Robot Right ( Method/Function )
     -Move Robot Right w/ Time Parameter ( Method/Function )
     -Move Robot Forward ( Method/Function ) ( COMPLETED )
