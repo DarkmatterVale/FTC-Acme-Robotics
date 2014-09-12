@@ -1,1 +1,8 @@
 Below add TO-DOs for the Autonomous program:
+
+1. Find IR beacon
+    Distance ( Wherever we need to be )
+    Direction ( center )
+2. Fire automated ball into center tube
+3. Use main manipulator to put ball in center tube ( program it in because of the possiblity catapult will not make it in )
+4. ( Secondary Objective, programmed last ) Move ball "holders" to designated area to gain additional points
