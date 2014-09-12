@@ -29,6 +29,35 @@ void MoveRobotForward( int speed, int encoderValue ) //function for moving robot
   motor[rightRobotMotor] = 0;
 }
 
+void moveRobotBackward( int speed ) //function for moving the robot backward
+{
+  motor[leftRobotMotor] = 0; //reset motors
+  motor[rightRobotMotor] = 0;
+  wait1Msec( 50 );
+  
+  motor[leftRobotMotor] = -speed; //go backward
+  motor[rightRobotMotor] = -speed;
+}
+
+void moveRobotBackward( int speed, int encoderValue ) //function for moving the robot backward
+{
+  motor[leftRobotMotor] = 0; //reset motors
+  motor[rightRobotMotor] = 0;
+  wait1Msec( 50 );
+  
+  nMotorEncoder[leftRobotMotor] = 0; //reset motor encoders
+  nMotorEncoder[rightRobotMotor] = 0;
+  
+  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //while encoders havent gone pase what is allowed
+  {
+    motor[leftRobotMotor] = -speed; //go backward
+    motor[rightRobotMotor] = -speed;
+  }
+  
+  motor[leftRobotMotor] = 0; //stop motors
+  motor[rightRobotMotor] = 0;
+}
+
 void MoveRobotLeft( int speed ) //function for turning the robot left at the passed speed variable infinitesimally
 {
   motor[leftRobotMotor] = 0; //stopping motors to eliminate course deviations
@@ -58,32 +87,32 @@ void MoveRobotLeft( int speed, int encoderValue ) //function for turning the rob
   motor[rightRobotMotor] = 0;
 }
 
-void moveRobotRight( int speed )
+void moveRobotRight( int speed ) //function for moving right at a certain speed infinitesimally
 {
-  motor[leftRobotMotor] = 0;
+  motor[leftRobotMotor] = 0; //reset motors
   motor[rightRobotMotor] = 0;
   wait1Msec( 50 );
   
-  motor[leftRobotMotor] = speed;
-  motor[rightRobotMotor] = speed;
+  motor[leftRobotMotor] = speed; //turn right
+  motor[rightRobotMotor] = -speed;
 }
 
-void moveRobotRight( int speed, int encoderValue )
+void moveRobotRight( int speed, int encoderValue ) //function for passing number of encoder ticks that motors should move before stopping
 {
-  motor[leftRobotMotor] = 0;
+  motor[leftRobotMotor] = 0; //resetting motors
   motor[rightRobotMotor] = 0;
   wait1Msec( 50 );
   
-  nMotorEncoder[leftRobotMove] = 0;
+  nMotorEncoder[leftRobotMove] = 0; //resetting robot motor encoders
   nMotorEncoder[rightRobotMove] = 0;
   
-  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue )
+  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //move while encoder ticks is less than the wanted amount
   {
-    motor[leftRobotMotor] = speed;
+    motor[leftRobotMotor] = speed; //turn right
     motor[rightRobotMotor] = -speed;
   }
   
-  motor[leftRobotMotor] = 0;
+  motor[leftRobotMotor] = 0; //once done, stop motors
   motor[rightRobotMotor] = 0;
 }
 
