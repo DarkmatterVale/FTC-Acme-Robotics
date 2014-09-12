@@ -58,6 +58,35 @@ void MoveRobotLeft( int speed, int encoderValue ) //function for turning the rob
   motor[rightRobotMotor] = 0;
 }
 
+void moveRobotRight( int speed )
+{
+  motor[leftRobotMotor] = 0;
+  motor[rightRobotMotor] = 0;
+  wait1Msec( 50 );
+  
+  motor[leftRobotMotor] = speed;
+  motor[rightRobotMotor] = speed;
+}
+
+void moveRobotRight( int speed, int encoderValue )
+{
+  motor[leftRobotMotor] = 0;
+  motor[rightRobotMotor] = 0;
+  wait1Msec( 50 );
+  
+  nMotorEncoder[leftRobotMove] = 0;
+  nMotorEncoder[rightRobotMove] = 0;
+  
+  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue )
+  {
+    motor[leftRobotMotor] = speed;
+    motor[rightRobotMotor] = -speed;
+  }
+  
+  motor[leftRobotMotor] = 0;
+  motor[rightRobotMotor] = 0;
+}
+
 task main() //main function; where the program will start at run
 {
   //In here will be the main part of the autonomous program
