@@ -57,6 +57,7 @@ void MoveRobotLeft( int speed, int encoderValue ) //function for turning the rob
   motor[leftRobotMotor] = 0; //stopping motors after the robots have moved for the set amount of time
   motor[rightRobotMotor] = 0;
 }
+
 task main() //main function; where the program will start at run
 {
   //In here will be the main part of the autonomous program
@@ -65,4 +66,7 @@ task main() //main function; where the program will start at run
   /*
     call catapult launcher ( will handle everything including getting sensorvalues and determing the correct course of action )
   */
+  
+  //use ball in main ball manipulator to get into center ball holder
+  //go to location used we want to be at when the autonomous stage is complete
 }
