@@ -121,19 +121,39 @@ void InitializeRobot() //function for initializing robot
   //In here, we should test all of the motors/moving parts of the robot by testing them for a couple of seconds, and then resetting the parts
 }
 
-void moveManipulator1( int encoderValue ) //function for moving the catapult a certain distance
+void moveManipulator1( int encoderValue ) //function for moving the first manipulator ( Catapult ) a certain distance
 {
   //In here, we need to move the first manipulator ( Catapult ) a certain degrees ( hence the encoderValue variable )
 }
 
-void moveManipulator2( int encoderValue ) //function for moving the catapult a certain distance
+void moveManipulator1() //function for moving the first manipulator ( Catapult ) infinitesimally
+{
+  //In here, move the first manipulator ( Catapult )
+}
+
+void moveManipulator2( int encoderValue ) //function for moving the second manipulator ( lifter ) a certain height
 {
   //In here, we need the "tower" to go up and drop the balls into the rolling ball "goal"
+}
+
+void moveManipulator2() //function for moving the second manipulator ( lifter ) a certain height
+{
+  //In here, move second manipulator ( lifter )
+}
+
+void catapultLauncher()
+{
+  //In here, we need to find IRBeacon and go to correct location
+  //call moveManipulator2() with the eed 
 }
 
 task main() //main function; where the program will start at run
 {
   //In here will be the main part of the autonomous program
+  
+  //Call InitializeRobot method
+  
+  //Move into position to launch catapult
   
   //We should call a function to complete the Catapult launch part of the autonomous stage
   /*
