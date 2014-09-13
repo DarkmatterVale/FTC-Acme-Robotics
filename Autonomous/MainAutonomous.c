@@ -141,10 +141,15 @@ void moveManipulator2() //function for moving the second manipulator ( lifter ) 
   //In here, move second manipulator ( lifter )
 }
 
-void catapultLauncher()
+void catapultLauncher() //function for dealing with the logic required to find the correct position, launch at a certain value of power
 {
   //In here, we need to find IRBeacon and go to correct location
-  //call moveManipulator2() with the eed 
+  //call moveManipulator2() with the correct encoder value
+}
+
+void pushBallHolder() //function for having the robot push the ball holders to the designated area
+{
+  //In here, we will need to have the robot push the ball holders/rollers into the box
 }
 
 task main() //main function; where the program will start at run
