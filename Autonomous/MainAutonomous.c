@@ -116,6 +116,21 @@ void moveRobotRight( int speed, int encoderValue ) //function for passing number
   motor[rightRobotMotor] = 0;
 }
 
+void InitializeRobot() //function for initializing robot
+{
+  //In here, we should test all of the motors/moving parts of the robot by testing them for a couple of seconds, and then resetting the parts
+}
+
+void moveManipulator1( int encoderValue ) //function for moving the catapult a certain distance
+{
+  //In here, we need to move the first manipulator ( Catapult ) a certain degrees ( hence the encoderValue variable )
+}
+
+void moveManipulator2( int encoderValue ) //function for moving the catapult a certain distance
+{
+  //In here, we need the "tower" to go up and drop the balls into the rolling ball "goal"
+}
+
 task main() //main function; where the program will start at run
 {
   //In here will be the main part of the autonomous program
