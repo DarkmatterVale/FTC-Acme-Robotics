@@ -7,6 +7,7 @@ MainAutonomous:
     2. Fire automated ball into center tube
     3. Use main manipulator to put ball in center tube ( program it in because of the possiblity catapult will not make it in )
     4. ( Secondary Objective, programmed last ) Move ball "holders" to designated area to gain additional points
+    5. Move to location we want to go to after autonomous
 
 Libraries:
     1.IRBeacon
@@ -15,3 +16,9 @@ Libraries:
     2. DistanceSensor
         getDistance() ( METHOD )
         DistanceSensor ( CONSTRUCTOR )
+    3. ColorSensor
+        getColor() ( METHOD )
+        ColorSensor ( CONSTRUCTOR )
+    4. 3 Axis Accelerometer
+        getPossibleMovement() ( METHOD )
+        3 Axis Accelerometer ( CONSTRUCTOR )
