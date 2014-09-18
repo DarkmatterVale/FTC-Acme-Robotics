@@ -116,7 +116,7 @@ void moveRobotRight( int speed, int encoderValue ) //function for passing number
   motor[rightRobotMotor] = 0;
 }
 
-void InitializeRobot() //function for initializing robot
+void initializeRobot() //function for initializing robot
 {
   //In here, we should test all of the motors/moving parts of the robot by testing them for a couple of seconds, and then resetting the parts
 }
@@ -152,8 +152,16 @@ void pushBallHolder() //function for having the robot push the ball holders to t
   //In here, we will need to have the robot push the ball holders/rollers into the box
 }
 
+void seekIrBeacon()
+{
+  //Robot will successfully find IR beacon and drop ball in tube 
+}
 task main() //main function; where the program will start at run
 {
+  initializeRobot();
+  seekIrBeacon();
+  
+  
   //In here will be the main part of the autonomous program
   
   //Call InitializeRobot method
