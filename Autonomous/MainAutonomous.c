@@ -1,6 +1,6 @@
 //Put main code for Autonomous Program
 
-void MoveRobotForward( int speed ) //function for moving robot forward at a certain speed infinitesimally
+void moveRobotForward( int speed ) //function for moving robot forward at a certain speed infinitesimally
 {
   motor[leftRobotMotor] = 0; //stopping motors to eliminate course deviations
   motor[rightRobotMotor] = 0;
@@ -10,7 +10,7 @@ void MoveRobotForward( int speed ) //function for moving robot forward at a cert
   motor[rightRobotMotor] = speed;
 }
 
-void MoveRobotForward( int speed, int encoderValue ) //function for moving robot forward at a certain speed and for a certain amount of time
+void moveRobotForward( int speed, int encoderValue ) //function for moving robot forward at a certain speed and for a certain amount of time
 {
   motor[leftRobotMotor] = 0; //stopping motors to eliminate course deviations
   motor[rightRobotMotor] = 0;
@@ -160,6 +160,8 @@ task main() //main function; where the program will start at run
 {
   initializeRobot();
   seekIrBeacon();
+  moveRobotForward(50);
+  //here will be a function to raise the arm and lower it to drop starting ball into tube
   
   
   //In here will be the main part of the autonomous program
