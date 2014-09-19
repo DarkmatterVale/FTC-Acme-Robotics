@@ -200,6 +200,12 @@ void catapultLauncher() //function for dealing with the logic required to find t
 void pullBallHolder() //function for having the robot push the ball holders to the designated area
 {
   //In here, we will need to have the robot push the ball holders/rollers into the box
+  
+  //find ball holder
+    //seek IR beacon
+    //based on location of IR Beacon and robot, move robot towards ball holder
+  
+  //drop ball holder "posts"
 }
 
 void seekIrBeacon()
