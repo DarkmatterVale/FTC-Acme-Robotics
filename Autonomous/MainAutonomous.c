@@ -147,34 +147,52 @@ void catapultLauncher() //function for dealing with the logic required to find t
   //call moveManipulator2() with the correct encoder value
 }
 
-void pushBallHolder() //function for having the robot push the ball holders to the designated area
+void pullBallHolder() //function for having the robot push the ball holders to the designated area
 {
   //In here, we will need to have the robot push the ball holders/rollers into the box
 }
 
 void seekIrBeacon()
 {
-  //Robot will successfully find IR beacon and drop ball in tube 
+  //Robot will successfully find IR beacon and drop ball in tube
+  
+  //find IR beacon
+    //use tetrix IR sensor's grid to move:
+      //right if the value is < than 5
+      //left if the value is > than 5
+      //straight if the value is = to 5
+  
+  //drop ball into container
 }
 task main() //main function; where the program will start at run
 {
-  initializeRobot();
-  seekIrBeacon();
-  moveRobotForward(50);
-  //here will be a function to raise the arm and lower it to drop starting ball into tube
+  //initializeRobot(); //initializing everything pertaining to the robot's function
   
+  //seekIrBeacon(); //example calls
+  
+  //moveRobotForward(50);
+  
+  //here will be a function to raise the arm and lower it to drop starting ball into tube
   
   //In here will be the main part of the autonomous program
   
   //Call InitializeRobot method
   
-  //Move into position to launch catapult
+  //POSSIBLE, NOT DECIDED
+    //Move into position to launch catapult
   
-  //We should call a function to complete the Catapult launch part of the autonomous stage
-  /*
-    call catapult launcher ( will handle everything including getting sensorvalues and determing the correct course of action )
-  */
+    //We should call a function to complete the Catapult launch part of the autonomous stage
+    /*
+      call catapult launcher ( will handle everything including getting sensorvalues and determing the correct course of action )
+    */
   
   //use ball in main ball manipulator to get into center ball holder
+  
+  //drop balls from center ball holder ( the one filled with balls at the beginning of the game )
+  
+  //move team goals to scoring area
+  
   //go to location used we want to be at when the autonomous stage is complete
+  
+  //stop and wait for autonomous to end
 }
