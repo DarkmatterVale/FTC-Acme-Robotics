@@ -207,17 +207,40 @@ void pullBallHolder() //function for having the robot push the ball holders to t
   //drop ball holder "posts"
 }
 
-void seekIrBeacon()
+void seekIrBeacon() //function for finding and moving to IR Beacon
 {
   //Robot will successfully find IR beacon and drop ball in tube
   
   //find IR beacon
     //use tetrix IR sensor's grid to move:
-      //right if the value is < than 5
-      //left if the value is > than 5
-      //straight if the value is = to 5
+      //if the value is < than 5
+        //turn robot to the right
+      //if the value is > than 5
+        //turn robot to the left
+      //if the value is = to 5
+        //go straight
   
   //drop ball into container
+    //call moveManipulator1/2( lift )
+    //bring manipulator/lift back down
+}
+
+void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
+{
+  //Successfully have robot drag goals into scoring zone
+  
+  //for ( int i = 0; i < 3; i++ )
+  //{
+    //find goals
+      //find current position
+        //find IR beacon
+      //move towards goal
+      //turn around
+  
+    //grab goal
+  
+    //drag to scoring zone
+  //}
 }
 
 task main() //main function; where the program will start at run
