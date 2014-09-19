@@ -178,7 +178,6 @@ void moveManipulator2( int encoderValue ) //function for moving the second manip
   //}
   
   //motor[liftMotor] = 0;
-  }
 }
 
 void moveManipulator2() //function for moving the second manipulator ( lifter ) a certain height
@@ -220,6 +219,7 @@ void seekIrBeacon()
   
   //drop ball into container
 }
+
 task main() //main function; where the program will start at run
 {
   //initializeRobot(); //initializing everything pertaining to the robot's function
