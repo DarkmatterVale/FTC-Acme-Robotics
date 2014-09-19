@@ -119,6 +119,18 @@ void moveRobotRight( int speed, int encoderValue ) //function for passing number
 void initializeRobot() //function for initializing robot
 {
   //In here, we should test all of the motors/moving parts of the robot by testing them for a couple of seconds, and then resetting the parts
+
+  //Test main motors
+    //Left movement motor and thus the left tread
+    //right movement motor and thus the right tread
+  
+  //Test sensors, provide feedback on a small LED matrix, green for in the clear, red for not in the clear
+  
+  //Test lift
+    //Bring lift up
+    //Move ball container around
+  
+  //Test rolling goal holder
 }
 
 void moveManipulator1( int encoderValue ) //function for moving the first manipulator ( Catapult ) a certain distance
