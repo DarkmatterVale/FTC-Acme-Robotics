@@ -1,5 +1,17 @@
 //Put main code for Autonomous Program
 
+//Var/Config lines
+//Motors:
+  //leftMotor
+  //rightMotor
+  //liftMotor
+  //catapultMotor
+//Sensors:
+  //lightSensor
+  //IRSensor
+  //Accelerometer
+  //DistanceSensor
+
 void moveRobotForward( int speed ) //function for moving robot forward at a certain speed infinitesimally
 {
   motor[leftRobotMotor] = 0; //stopping motors to eliminate course deviations
@@ -131,32 +143,58 @@ void initializeRobot() //function for initializing robot
     //Move ball container around
   
   //Test rolling goal holder
+  
+  //Test Catapult/Thrower ( POSSIBLE, NOT SET IN STONE )
 }
 
 void moveManipulator1( int encoderValue ) //function for moving the first manipulator ( Catapult ) a certain distance
 {
   //In here, we need to move the first manipulator ( Catapult ) a certain degrees ( hence the encoderValue variable )
+  
+  //motor[catapultMotor] = 0;
+  
+  //while ( nMotorEncoder[catapultMotor] <= encoderValue )
+  //{
+  //}
+  
+  //motor[catapultMotor] = 0;
 }
 
 void moveManipulator1() //function for moving the first manipulator ( Catapult ) infinitesimally
 {
   //In here, move the first manipulator ( Catapult )
+  
+  //move Manipulator1 motor ( motor[catapultMotor] = SPEED; )
 }
 
 void moveManipulator2( int encoderValue ) //function for moving the second manipulator ( lifter ) a certain height
 {
   //In here, we need the "tower" to go up and drop the balls into the rolling ball "goal"
+  
+  //motor[liftMotor] = SPEED;
+  
+  //while ( nMotorEncoder[liftMotor] <= encoderValue )
+  //{
+  //}
+  
+  //motor[liftMotor] = 0;
+  }
 }
 
 void moveManipulator2() //function for moving the second manipulator ( lifter ) a certain height
 {
   //In here, move second manipulator ( lifter )
+  
+  //move Manipulator2 motor ( motor[liftMotor] = SPEED; )
 }
 
 void catapultLauncher() //function for dealing with the logic required to find the correct position, launch at a certain value of power
 {
   //In here, we need to find IRBeacon and go to correct location
-  //call moveManipulator2() with the correct encoder value
+  
+  //call findIRBeacon ( overloaded method, one for catapult, another for lift)
+  
+  //call moveManipulator1/2() with the correct encoder value
 }
 
 void pullBallHolder() //function for having the robot push the ball holders to the designated area
