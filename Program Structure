@@ -3,7 +3,7 @@ I have begun to design which classes will have to be created, but since the comp
 
 
 Autonomous:
-  -Main
+  -Main ( PSUEDOCODE COMPLETED! )
     -Move Robot Left ( Method/Function ) ( COMPLETED )
     -Move Robot Left w/ Encoder Parameter( Method/Function ) ( COMPLETED )
     -Move Robot Right ( Method/Function ) ( COMPLETED )
