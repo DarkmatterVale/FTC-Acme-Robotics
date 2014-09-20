@@ -135,23 +135,57 @@ void initializeRobot() //function for initializing robot
   //Test main motors
     //Left movement motor and thus the left tread
     //right movement motor and thus the right tread
+    
+    //example:
+      //motor[rightMotor] = 70;
+      //motor[leftMotor] = 70;
   
   //Test sensors, provide feedback on a small LED matrix, green for in the clear, red for not in the clear
+    //feedback from the distance sensor ( SensorValue[distanceSensor] != 0 )
+    //feedback from the light sensor ( SensorValue[lightSensor] != 0 )
+    //feedback from the accelerometer ( SensorValue[accelerometerSensor] != 0 )
+    //feedback from the IR Sensor ( SensorValue[IRSensor] != 0 )
   
   //Test lift
     //Bring lift up
+      //motor[liftMotor] = 70;
+      //for a certain amount of time:
+        //wait1Msec( HEIGHT WANTED )
+        //motor[liftMotor] = 0;
+        //
+        //while ( nMotorEncoder[liftMotor] <= HEIGHT WANTED )
+        //{
+        //}
+        //motor[liftMotor] = 0;
+        
     //Move ball container around
+      //move servo a full rotation
   
   //Test rolling goal holder
+    //drop posts
   
   //Test Catapult/Thrower ( POSSIBLE, NOT SET IN STONE )
+    //Mock launch as a test
 }
 
 void moveManipulator1( int encoderValue ) //function for moving the first manipulator ( Catapult ) a certain distance
 {
   //In here, we need to move the first manipulator ( Catapult ) a certain degrees ( hence the encoderValue variable )
   
+  //motor[catapultMotor] = SPEED;
+  
+  //while ( nMotorEncoder[catapultMotor] <= encoderValue )
+  //{
+  //}
+  
   //motor[catapultMotor] = 0;
+}
+
+void moveManipulator1( int encoderValue, int speed ) //function for moving the first manipulator ( Catapult ) a certain distance
+{
+  //In here, we need to move the first manipulator ( Catapult ) a certain degrees ( hence the encoderValue variable )
+  
+  //motor[catapultMotor] = speed;
   
   //while ( nMotorEncoder[catapultMotor] <= encoderValue )
   //{
@@ -164,7 +198,18 @@ void moveManipulator1() //function for moving the first manipulator ( Catapult )
 {
   //In here, move the first manipulator ( Catapult )
   
-  //move Manipulator1 motor ( motor[catapultMotor] = SPEED; )
+  //move Manipulator1
+  
+  //motor ( motor[catapultMotor] = SPEED; )
+}
+
+void moveManipulator1( int speed ) //function for moving the first manipulator ( Catapult ) infinitesimally
+{
+  //In here, move the first manipulator ( Catapult )
+  
+  //move Manipulator1
+  
+  //motor ( motor[catapultMotor] = speed; )
 }
 
 void moveManipulator2( int encoderValue ) //function for moving the second manipulator ( lifter ) a certain height
@@ -180,11 +225,35 @@ void moveManipulator2( int encoderValue ) //function for moving the second manip
   //motor[liftMotor] = 0;
 }
 
+void moveManipulator2( int encoderValue, int speed ) //function for moving the second manipulator ( lifter ) a certain height
+{
+  //In here, we need the "tower" to go up and drop the balls into the rolling ball "goal"
+  
+  //motor[liftMotor] = speed;
+  
+  //while ( nMotorEncoder[liftMotor] <= encoderValue )
+  //{
+  //}
+  
+  //motor[liftMotor] = 0;
+}
+
 void moveManipulator2() //function for moving the second manipulator ( lifter ) a certain height
 {
   //In here, move second manipulator ( lifter )
   
-  //move Manipulator2 motor ( motor[liftMotor] = SPEED; )
+  //move Manipulator2
+  
+  //motor ( motor[liftMotor] = SPEED; )
+}
+
+void moveManipulator2( int speed ) //function for moving the second manipulator ( lifter ) a certain height
+{
+  //In here, move second manipulator ( lifter )
+  
+  //move Manipulator2
+  
+  //motor ( motor[liftMotor] = speed; )
 }
 
 void catapultLauncher() //function for dealing with the logic required to find the correct position, launch at a certain value of power
@@ -202,9 +271,11 @@ void pullBallHolder() //function for having the robot push the ball holders to t
   
   //find ball holder
     //seek IR beacon
+      //call findIRBeacon
+        //MAYBE WE SHOULD OVERLOAD THE METHOD, ALLOWING FOR A MORE CASE BY CASE DEALING WITH WHAT WE DO WHEN WE FIND THE IR BEACON
     //based on location of IR Beacon and robot, move robot towards ball holder
   
-  //drop ball holder "posts"
+  //drop ball holder posts
 }
 
 void seekIrBeacon() //function for finding and moving to IR Beacon
@@ -221,8 +292,9 @@ void seekIrBeacon() //function for finding and moving to IR Beacon
         //go straight
   
   //drop ball into container
-    //call moveManipulator1/2( lift )
+    //call moveManipulator1/2( lift ) with encodervalue
     //bring manipulator/lift back down
+      //call moveManipulator1/2( lift ) with -encodervalue and -speed level
 }
 
 void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
@@ -238,8 +310,10 @@ void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
       //turn around
   
     //grab goal
+      //drop posts
   
     //drag to scoring zone
+      //move towards scoring zone
   //}
 }
 
