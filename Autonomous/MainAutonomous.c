@@ -132,6 +132,8 @@ void initializeRobot() //function for initializing robot
 {
   //In here, we should test all of the motors/moving parts of the robot by testing them for a couple of seconds, and then resetting the parts
 
+  //Find/Set threshhold for light sensor
+  
   //Test main motors
     //Left movement motor and thus the left tread
     //right movement motor and thus the right tread
