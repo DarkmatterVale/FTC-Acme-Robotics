@@ -128,11 +128,16 @@ void moveRobotRight( int speed, int encoderValue ) //function for passing number
   motor[rightRobotMotor] = 0;
 }
 
+void findThreshHold() //function for finding/setting the threshhold for the light sensor
+{
+  //In this function, we need to set the threshhold for the light sensor
+}
+
 void initializeRobot() //function for initializing robot
 {
   //In here, we should test all of the motors/moving parts of the robot by testing them for a couple of seconds, and then resetting the parts
 
-  //Find/Set threshhold for light sensor
+  //Find/Set threshhold for light sensor by calling findThreshHold()
   
   //Test main motors
     //Left movement motor and thus the left tread
