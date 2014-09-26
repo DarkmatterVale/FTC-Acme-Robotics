@@ -11,6 +11,21 @@
   //IRSensor
   //Accelerometer
   //DistanceSensor
+  
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//                                        Autonomous mode program for FTC Team 7983
+//
+//In this program, our overall goal is to have the robot score as many points as possible, in as little time as possible
+//
+//                                                Goals for Autonomous mode:
+//                                            1. Drive robot from ramp to floor
+//                                          2. Drop kickstand in center ball holder
+//                                3. Load/Shoot autonomous loaded balls into center ball holders
+//                                                4. Grab a goal and hold it
+//                              5. Move to position we would like it to be at at end of autonomous
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void moveRobotForward( int speed ) //function for moving robot forward at a certain speed infinitesimally
 {
