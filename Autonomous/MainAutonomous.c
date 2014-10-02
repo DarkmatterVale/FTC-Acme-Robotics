@@ -157,6 +157,16 @@ void moveRobotRight( int speed, int encoderValue ) //function for passing number
 void findThreshHold() //function for finding/setting the threshhold for the light sensor
 {
   //In this function, we need to set the threshhold for the light sensor
+  
+  //We need to get values for:
+    //Red ramp
+    //Blue ramp
+    //Red ground
+    //Blue ground
+    //Normal ground ( grey mat )
+    //Yellow platform
+    //Red stick in center yellow
+    //Blue stick in center yellow
 }
 
 void initializeRobot() //function for initializing robot
