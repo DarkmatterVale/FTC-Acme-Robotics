@@ -37,6 +37,8 @@ Autonomous:
     -Set SensorValue ( Method/Function )
     -No-arg Constructor ( Method/Function )
     -Arg Constructor ( Method/Function )
+    
+  AS OF THIS MOMENT, WE ARE ELIMINATING LIBRARIES----------
 
   Classes/Libraries needed to be created for Autonomous mode:
     -Ultrasonic/Distance sensor
@@ -50,6 +52,8 @@ Autonomous:
   
     We would design these classes. By doing this, we can compartmentalize the program, making it easier to debug and potentially expand.
     This is not set in stone, but it would be best to have the program as compartmentalized as possible.
+  
+  -------------
 
 
 Teleop:
