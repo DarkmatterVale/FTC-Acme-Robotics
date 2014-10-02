@@ -3,3 +3,12 @@ Below add TO-DOs for Teleop program:
 MainTeleop:
   -Pseudocode
   -Final
+
+Program structure:
+  -Move eacch tread based on respective joysticks
+  -turn on conveyor belt with a button on the main 4-button panel
+  -turn on shooter based on "keypad"
+    -upward button pressed raises speed
+    -downward button pressed drops speed
+    -left button full speed & turn on
+    -right button turn off
