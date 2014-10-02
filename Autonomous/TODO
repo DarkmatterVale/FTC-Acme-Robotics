@@ -1,6 +1,7 @@
 Below add TO-DOs for the Autonomous program:
 
 MainAutonomous:
+    1. Initialize Robot
     1. Find IR beacon
         Distance ( Wherever we need to be )
         Direction ( center )
