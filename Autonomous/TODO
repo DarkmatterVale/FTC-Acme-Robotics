@@ -8,6 +8,8 @@ MainAutonomous:
     3. Use main manipulator to put ball in center tube ( program it in because of the possiblity catapult will not make it in )
     4. ( Secondary Objective, programmed last ) Move ball "holders" to designated area to gain additional points
     5. Move to location we want to go to after autonomous
+    
+AS OF THIS MOMENT, WE ARE ELIMINATING LIBRARIES--------
 
 Libraries:
     1.IRBeacon
