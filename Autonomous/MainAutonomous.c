@@ -7,10 +7,11 @@
   //liftMotor
   //catapultMotor
 //Sensors:
-  //lightSensor
+  //lightSensor ( two at the front of the robot )
   //IRSensor
+    //WE MIGHT USE MULTIPLE IRSENSORS. IT MIGHT BE NEEDED TO TRIANGULATE IRBEACON
   //Accelerometer
-  //DistanceSensor
+  //DistanceSensor ( double ultrasonic sensors )
   
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
