@@ -1,4 +1,4 @@
-//Put main code for Autonomous Program
+//Main source code for autonomous period goes in here
 
 //Var/Config lines
 //Motors:
@@ -26,6 +26,16 @@
 //                              5. Move to position we would like it to be at at end of autonomous
 //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+
+***VERY IMPORTANT***
+
+NOT ALL OF THE FOLLOWING METHODS WILL BE USED. I HAVE INCLUDED THEM ALL JUST TO BE ON THE SAFE SIDE OF WHAT MIGHT BE USEFUL
+
+Additionally, we might only have 1 manipulator, eliminating one set of manipulator methods.
+
+*/
 
 void moveRobotForward( int speed ) //function for moving robot forward at a certain speed infinitesimally
 {
