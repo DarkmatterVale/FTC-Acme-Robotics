@@ -168,17 +168,41 @@ void findThreshHold() //function for finding/setting the threshhold for the ligh
     //Red stick in center yellow
     //Blue stick in center yellow
     
-  //Repeat for all of the values needed to be inputed
+  //Get Red ramp value
   nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
-	nxtDisplayTextLine( 1, "%s", "a bright surface, then " );
-	nxtDisplayTextLine( 2, "%s", "push the orange button" );
+  nxtDisplayTextLine( 1, "%s", "the red ramp, then " );
+  nxtDisplayTextLine( 2, "%s", "push the orange button" );
 
-	while ( !( nNxtButtonPressed == 3 ) )
-	{
-		nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
-	}
+  while ( !( nNxtButtonPressed == 3 ) )
+  {
+	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
+  }
 
-	VARIABLE USED = SensorValue[ lightSensor ];
+  VARIABLE USED = SensorValue[ lightSensor ];
+  
+  //Get Blue ramp value
+  nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
+  nxtDisplayTextLine( 1, "%s", "tbe blue ramp, then " );
+  nxtDisplayTextLine( 2, "%s", "push the orange button" );
+
+  while ( !( nNxtButtonPressed == 3 ) )
+  {
+	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
+  }
+
+  VARIABLE USED = SensorValue[ lightSensor ];
+  
+  //Get red surface value
+  nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
+  nxtDisplayTextLine( 1, "%s", "red center line, then " );
+  nxtDisplayTextLine( 2, "%s", "push the orange button" );
+
+  while ( !( nNxtButtonPressed == 3 ) )
+  {
+	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
+  }
+
+  VARIABLE USED = SensorValue[ lightSensor ];
 }
 
 void initializeRobot() //function for initializing robot
