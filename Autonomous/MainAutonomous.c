@@ -167,6 +167,18 @@ void findThreshHold() //function for finding/setting the threshhold for the ligh
     //Yellow platform
     //Red stick in center yellow
     //Blue stick in center yellow
+    
+  //Repeat for all of the values needed to be inputed
+  nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
+	nxtDisplayTextLine( 1, "%s", "a bright surface, then " );
+	nxtDisplayTextLine( 2, "%s", "push the orange button" );
+
+	while ( !( nNxtButtonPressed == 3 ) )
+	{
+		nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
+	}
+
+	VARIABLE USED = SensorValue[ lightSensor ];
 }
 
 void initializeRobot() //function for initializing robot
