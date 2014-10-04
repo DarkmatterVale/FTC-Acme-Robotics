@@ -167,6 +167,12 @@ void findThreshHold() //function for finding/setting the threshhold for the ligh
     //Yellow platform
     //Red stick in center yellow
     //Blue stick in center yellow
+  
+  /*
+  
+  NOT ALL OF THE FOLLOWING VALUES WILL BE USED. I JUST ADDED THEM TO MAKE SURE WE HAVE ALL THAT WE COULD NEED
+  
+  */
     
   //Get Red ramp value
   nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
@@ -194,7 +200,67 @@ void findThreshHold() //function for finding/setting the threshhold for the ligh
   
   //Get red surface value
   nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
-  nxtDisplayTextLine( 1, "%s", "red center line, then " );
+  nxtDisplayTextLine( 1, "%s", "red surface line, then " );
+  nxtDisplayTextLine( 2, "%s", "push the orange button" );
+
+  while ( !( nNxtButtonPressed == 3 ) )
+  {
+	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
+  }
+
+  VARIABLE USED = SensorValue[ lightSensor ];
+  
+  //Get blue surface value
+  nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
+  nxtDisplayTextLine( 1, "%s", "blue surface line, then " );
+  nxtDisplayTextLine( 2, "%s", "push the orange button" );
+
+  while ( !( nNxtButtonPressed == 3 ) )
+  {
+	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
+  }
+
+  VARIABLE USED = SensorValue[ lightSensor ];
+  
+  //Get grey mat value
+  nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
+  nxtDisplayTextLine( 1, "%s", "gray mat, then " );
+  nxtDisplayTextLine( 2, "%s", "push the orange button" );
+
+  while ( !( nNxtButtonPressed == 3 ) )
+  {
+	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
+  }
+
+  VARIABLE USED = SensorValue[ lightSensor ];
+  
+  //Get yellow platform value
+  nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
+  nxtDisplayTextLine( 1, "%s", "yellow platform, then " );
+  nxtDisplayTextLine( 2, "%s", "push the orange button" );
+
+  while ( !( nNxtButtonPressed == 3 ) )
+  {
+	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
+  }
+
+  VARIABLE USED = SensorValue[ lightSensor ];
+  
+  //Get red stick value
+  nxtDisplayTextLine( 0, "%s", "Place light sensor on " );
+  nxtDisplayTextLine( 1, "%s", "red stick, then " );
+  nxtDisplayTextLine( 2, "%s", "push the orange button" );
+
+  while ( !( nNxtButtonPressed == 3 ) )
+  {
+	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
+  }
+
+  VARIABLE USED = SensorValue[ lightSensor ];
+  
+  //Get blue stick value
+  nxtDisplayTextLine( 0, "%s", "Place light sensor on " );
+  nxtDisplayTextLine( 1, "%s", "blue stick, then " );
   nxtDisplayTextLine( 2, "%s", "push the orange button" );
 
   while ( !( nNxtButtonPressed == 3 ) )
