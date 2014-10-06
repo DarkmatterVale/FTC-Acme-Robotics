@@ -12,6 +12,8 @@
     //WE MIGHT USE MULTIPLE IRSENSORS. IT MIGHT BE NEEDED TO TRIANGULATE IRBEACON
   //Accelerometer
   //DistanceSensor ( double ultrasonic sensors )
+  //Compass sensor
+    //WE MIGHT NEED THIS TO DETERMINE WHERE WE ARE FACING, TO HELP US DECIDE HOW TO MOVE ( Forwards, backwards, left, right )
   
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
