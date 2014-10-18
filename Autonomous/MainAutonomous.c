@@ -315,9 +315,24 @@ void moveRobotRight( int speed, int encoderValue ) //function for passing number
   motor[rightRobotMotor] = 0;
 }
 
-void findThreshHold() //function for finding/setting the threshhold for the light sensor
+void findThreshHold()
 {
-  //In this function, we need to set the threshhold for the light sensor
+  /*
+  Rev 1.0
+  In this function, we need to set the threshhold(s) for the light sensor and tell it the values of all of the lines on the board
+  
+  Inputs:
+  	color sensor
+  	
+  Outputs:
+  	Variables' values
+  
+  To Do:
+  	Figure out variable scheme ( what variables that are set here need to be global, what variables do we need, etc )
+  
+  Author(s):
+  	Vale Tolpegin
+  */
   
   //We need to get values for:
     //Red ramp
