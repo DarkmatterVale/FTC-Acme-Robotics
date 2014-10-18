@@ -79,6 +79,8 @@ void moveRobotForward( int speed, int encoderValue )
   Inputs:
   	Passed speed variable
   	Passed encoderValue variable
+  	leftRobotMotor encoder
+  	rightRobotMotor encoder
   Outputs:
   	leftRobotMotor
   	rightRobotMotor
@@ -145,6 +147,8 @@ void moveRobotBackward( int speed, int encoderValue )
   Inputs:
   	Passed speed variable
   	Passed encoderValue variable
+  	leftRobotMotor encoder
+  	rightRobotMotor encoder
   Outputs:
   	leftRobotMotor
   	RightRobotMotor
@@ -174,8 +178,26 @@ void moveRobotBackward( int speed, int encoderValue )
   motor[rightRobotMotor] = 0;
 }
 
-void MoveRobotLeft( int speed ) //function for turning the robot left at the passed speed variable infinitesimally
+void moveRobotLeft( int speed )
 {
+  /*
+  Rev 1.0
+  This function is used for turning the robot left at the passed speed variable infinitesimally
+  
+  Inputs:
+  	Passed speed variable
+  Outputs:
+  	leftRobotMotor
+  	RightRobotMotor
+  
+  To Do:
+  	NONE
+  
+  Author(s):
+  	Vale Tolpegin
+  */	
+  	
+  	
   motor[leftRobotMotor] = 0; //stopping motors to eliminate course deviations
   motor[rightRobotMotor] = 0;
   wait1Msec( 50 );
@@ -184,8 +206,29 @@ void MoveRobotLeft( int speed ) //function for turning the robot left at the pas
   motor[rightRobotMotor] = speed;
 }
 
-void MoveRobotLeft( int speed, int encoderValue ) //function for turning the robot left at a passed speed value for a certain amount of time
+void moveRobotLeft( int speed, int encoderValue )
 {
+  /*
+  Rev 1.0
+  This function is used for turning the robot left at a passed speed value for a certain number of encoder ticks
+  
+  Inputs:
+  	Passed speed variable
+  	Passed encoderValue variable
+  	leftRobotMotor encoder
+  	rightRobotMotor encoder
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
+  
+  To Do:
+  	NONE
+  	
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  
   motor[leftRobotMotor] = 0; //stopping motors to prevent course deviations
   motor[rightRobotMotor] = 0;
   wait1Msec( 50 );
