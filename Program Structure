@@ -42,10 +42,15 @@ Autonomous:
 
 
 Teleop:
-  -Main
-    -Move Robot Forward ( Method/Function )
-    -Move Robot Left ( Method/Function )
-    -Move Robot Right ( Method/Function )
-    -Move Robot Backward ( Method/Function )
-    -Move Manipulator 1 ( Method/Function )
-    -Move Manipulator 2 ( Method/Function )
+  -Drive Joystick Controller
+    -Move eacch tread based on respective joysticks
+    -"Grab" goals
+    
+  -Manipulator Joystick Controller
+    -turn on conveyor belt with a button on the main 4-button panel
+    -turn on shooter based on "keypad"
+      -upward button pressed raises speed
+      -downward button pressed drops speed
+      -left button full speed & turn on
+      -right button turn off
+
