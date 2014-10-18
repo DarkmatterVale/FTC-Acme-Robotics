@@ -661,6 +661,18 @@ void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
 
 task main() //main function; where the program will start at run
 {
+  /*
+  Rev 1.0
+  This is the main task which begins running once the competition starts
+  
+  To Do:
+  	NONE
+  
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  
   //initializeRobot(); //initializing everything pertaining to the robot's function
   
   //seekIrBeacon(); //example calls
