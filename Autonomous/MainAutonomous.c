@@ -1,4 +1,6 @@
-//Main source code for autonomous period goes in here
+//Main source code for autonomous period
+
+//pragma statements will go here
 
 //Var/Config lines
 //Motors:
@@ -9,9 +11,8 @@
 //Sensors:
   //lightSensor ( two at the front of the robot )
   //IRSensor
-    //WE MIGHT USE MULTIPLE IRSENSORS. IT MIGHT BE NEEDED TO TRIANGULATE IRBEACON
   //Accelerometer
-  //DistanceSensor ( double ultrasonic sensors )
+  //DistanceSensor
   //Compass sensor
     //WE MIGHT NEED THIS TO DETERMINE WHERE WE ARE FACING, TO HELP US DECIDE HOW TO MOVE ( Forwards, backwards, left, right )
   
