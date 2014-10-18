@@ -588,8 +588,6 @@ void pullBallHolder()
   */
   
   
-  Inputs:
-  	
   //find ball holder
     //seek IR beacon
       //call findIRBeacon
@@ -599,9 +597,25 @@ void pullBallHolder()
   //drop ball holder posts
 }
 
-void seekIrBeacon() //function for finding and moving to IR Beacon
+void seekIrBeacon()
 {
-  //Robot will successfully find IR beacon and drop ball in tube
+  /*
+  Rev 1.0
+  Robot will successfully find IR beacon and drop ball in tube
+  
+  Inputs:
+  	IR sensor
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
+  
+  To Do:
+  	Edit/Add to Inputs and Outputs
+  
+  Author(s):
+  	Vale Tolpegin
+  */
+  
   
   //find IR beacon
     //use tetrix IR sensor's grid to move:
@@ -620,6 +634,13 @@ void seekIrBeacon() //function for finding and moving to IR Beacon
 
 void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
 {
+  /*
+  
+  ***DETERMINE WHAT TO DO WITH THIS FUNCTION. IT IS A COPY OF AN ABOVE FUNCTION***
+  
+  */
+  
+  
   //Successfully have robot drag goals into scoring zone
   
   //for ( int i = 0; i < 3; i++ )
