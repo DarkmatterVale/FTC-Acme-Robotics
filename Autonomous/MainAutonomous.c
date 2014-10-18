@@ -44,22 +44,22 @@ manipulators and their associated methods and add additional methods to best sui
 
 void moveRobotForward( int speed )
 {
-  //Rev 1.0
+  /*
+  Rev 1.0
+  This function will move the robot forward at a certain speed infinitesimally
   
-  //This function will move the robot forward at a certain speed infinitesimally
-  
-  //Inputs:
-  	//Passed speed variable
+  Inputs:
+  	Passed speed variable
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
   	
-  //Outputs:
-  	//leftRobotMotor
-  	//rightRobotMotor
+  To Do:
+  	NONE
   	
-  //To Do:
-  	//NONE
-  	
-  //Author(s):
-  	//Vale Tolpegin
+  Author(s):
+  	Vale Tolpegin
+  */
   	
   	
   motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
@@ -72,23 +72,23 @@ void moveRobotForward( int speed )
 
 void moveRobotForward( int speed, int encoderValue )
 {
-  //Rev 1.0
+  /*
+  Rev 1.0
+  This function will move the robot forward at a certain speed for a certain number of encoder ticks
   
-  //This function will move the robot forward at a certain speed for a certain number of encoder ticks
+  Inputs:
+  	Passed speed variable
+  	Passed encoderValue variable
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
+  	
+  To Do:
+  	NONE
   
-  //Inputs:
-  	//Passed speed variable
-  	//Passed encoderValue variable
-  
-  //Outputs:
-  	//leftRobotMotor
-  	//rightRobotMotor
-  
-  //To Do:
-  	//NONE
-  
-  //Author(s):
-  	//Vale Tolpegin
+  Author(s):
+  	Vale Tolpegin
+  */
   	
   	
   motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
@@ -110,22 +110,22 @@ void moveRobotForward( int speed, int encoderValue )
 
 void moveRobotBackward( int speed )
 {
-  //Rev 1.0
+  /*
+  Rev 1.0
+  This function is used to move the robot backward at a certain speed
   
-  //This function is used to move the robot backward at a certain speed
-  
-  //Inputs:
-  	//Passed speed variable
-  
-  //Outputs:
-  	//leftRobotMotor
-  	//rightRobotMotor
+  Inputs:
+  	Passed speed variable
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
   	
-  //To Do:
-  	//NONE
+  To Do:
+  	NONE
   
-  //Author(s):
-  	//Vale Tolpegin
+  Author(s):
+  	Vale Tolpegin
+  */	
   	
   	
   motor[leftRobotMotor] = 0; //reset motors
@@ -138,23 +138,23 @@ void moveRobotBackward( int speed )
 
 void moveRobotBackward( int speed, int encoderValue )
 {
-  //Rev 1.0
+  /*
+  Rev 1.0
+  This function is used for moving the robot backward at a certain speed for a certain number of encoder ticks
   
-  //This function is used for moving the robot backward at a certain speed for a certain number of encoder ticks
+  Inputs:
+  	Passed speed variable
+  	Passed encoderValue variable
+  Outputs:
+  	leftRobotMotor
+  	RightRobotMotor
   
-  //Inputs:
-  	//Passed speed variable
-  	//Passed encoderValue variable
+  To Do:
+  	NONE
   
-  //Outputs:
-  	//leftRobotMotor
-  	//RightRobotMotor
-  
-  //To Do:
-  	//NONE
-  
-  //Author(s):
-  	//Vale Tolpegin
+  Author(s):
+  	Vale Tolpegin
+  */
   	
   	
   motor[leftRobotMotor] = 0; //reset motors
