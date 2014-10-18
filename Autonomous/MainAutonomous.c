@@ -42,19 +42,42 @@ manipulators and their associated methods and add additional methods to best sui
 
 */
 
-void moveRobotForward( int speed ) //function for moving robot forward at a certain speed infinitesimally
+void moveRobotForward( int speed )
 {
-  motor[leftRobotMotor] = 0; //stopping motors to eliminate course deviations
+  //Rev 1.0
+  //This function will move the robot forward at a certain speed infinitesimally
+  //Inputs:
+  	//Passed speed variable
+  //Outputs:
+  	//leftRobotMotor is set to different values ( 0 followed by speed variable )
+  	//rightRobotMotor is set to different values ( 0 followed by speed variable )
+  //To Do for this method:
+  	//NONE
+  	
+  	
+  motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
   motor[rightRobotMotor] = 0;
   wait1Msec( 50 );
   
-  motor[leftRobotMotor] = speed; //setting the motors to the passed speed variable level power level
+  motor[leftRobotMotor] = speed; //setting the motors to the passed speed variable level power level ( in percent of highest possible speed )
   motor[rightRobotMotor] = speed;
 }
 
-void moveRobotForward( int speed, int encoderValue ) //function for moving robot forward at a certain speed and for a certain amount of time
+void moveRobotForward( int speed, int encoderValue )
 {
-  motor[leftRobotMotor] = 0; //stopping motors to eliminate course deviations
+  //Rev 1.0
+  //This function will move the robot forward at a certain speed for a certain number of encoder ticks
+  //Inputs:
+  	//Passed speed variable
+  	//Passed encoderValue variable
+  //Outputs:
+  	//leftRobotMotor is set to different values ( 0 followed by speed variable )
+  	//rightRobotMotor is set to different values ( 0 followed by speed variable )
+  //To Do for this method:
+  	//NONE
+  	
+  	
+  motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
   motor[rightRobotMotor] = 0;
   wait1Msec( 50 );
   
