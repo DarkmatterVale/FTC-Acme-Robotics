@@ -52,15 +52,14 @@ void moveRobotForward( int speed )
   	//Passed speed variable
   	
   //Outputs:
-  	//leftRobotMotor is set to different values ( 0 followed by speed variable )
-  	//rightRobotMotor is set to different values ( 0 followed by speed variable )
+  	//leftRobotMotor
+  	//rightRobotMotor
   	
-  //To Do for this method:
+  //To Do:
   	//NONE
   	
   //Author(s):
   	//Vale Tolpegin
-  	
   	
   	
   motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
@@ -82,15 +81,14 @@ void moveRobotForward( int speed, int encoderValue )
   	//Passed encoderValue variable
   
   //Outputs:
-  	//leftRobotMotor is set to different values ( 0 followed by speed variable )
-  	//rightRobotMotor is set to different values ( 0 followed by speed variable )
+  	//leftRobotMotor
+  	//rightRobotMotor
   
-  //To Do for this method:
+  //To Do:
   	//NONE
   
   //Author(s):
   	//Vale Tolpegin
-  
   	
   	
   motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
@@ -110,8 +108,26 @@ void moveRobotForward( int speed, int encoderValue )
   motor[rightRobotMotor] = 0;
 }
 
-void moveRobotBackward( int speed ) //function for moving the robot backward
+void moveRobotBackward( int speed )
 {
+  //Rev 1.0
+  
+  //This function is used to move the robot backward at a certain speed
+  
+  //Inputs:
+  	//Passed speed variable
+  
+  //Outputs:
+  	//leftRobotMotor
+  	//rightRobotMotor
+  	
+  //To Do:
+  	//NONE
+  
+  //Author(s):
+  	//Vale Tolpegin
+  	
+  	
   motor[leftRobotMotor] = 0; //reset motors
   motor[rightRobotMotor] = 0;
   wait1Msec( 50 );
@@ -120,8 +136,27 @@ void moveRobotBackward( int speed ) //function for moving the robot backward
   motor[rightRobotMotor] = -speed;
 }
 
-void moveRobotBackward( int speed, int encoderValue ) //function for moving the robot backward
+void moveRobotBackward( int speed, int encoderValue )
 {
+  //Rev 1.0
+  
+  //This function is used for moving the robot backward at a certain speed for a certain number of encoder ticks
+  
+  //Inputs:
+  	//Passed speed variable
+  	//Passed encoderValue variable
+  
+  //Outputs:
+  	//leftRobotMotor
+  	//RightRobotMotor
+  
+  //To Do:
+  	//NONE
+  
+  //Author(s):
+  	//Vale Tolpegin
+  	
+  	
   motor[leftRobotMotor] = 0; //reset motors
   motor[rightRobotMotor] = 0;
   wait1Msec( 50 );
