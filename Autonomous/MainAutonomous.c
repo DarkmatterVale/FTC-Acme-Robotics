@@ -515,25 +515,7 @@ void moveManipulator1( int encoderValue, int speed ) //function for moving the f
   //motor[catapultMotor] = 0;
 }
 
-void moveManipulator1() //function for moving the first manipulator ( Catapult ) infinitesimally
-{
-  //In here, move the first manipulator ( Catapult )
-  
-  //move Manipulator1
-  
-  //motor ( motor[catapultMotor] = SPEED; )
-}
-
-void moveManipulator1( int speed ) //function for moving the first manipulator ( Catapult ) infinitesimally
-{
-  //In here, move the first manipulator ( Catapult )
-  
-  //move Manipulator1
-  
-  //motor ( motor[catapultMotor] = speed; )
-}
-
-void moveManipulator2( int encoderValue ) //function for moving the second manipulator ( lifter ) a certain height
+void moveManipulator( int encoderValue ) //function for moving the second manipulator ( lifter ) a certain height
 {
   //In here, we need the "tower" to go up and drop the balls into the rolling ball "goal"
   
@@ -546,7 +528,7 @@ void moveManipulator2( int encoderValue ) //function for moving the second manip
   //motor[liftMotor] = 0;
 }
 
-void moveManipulator2( int encoderValue, int speed ) //function for moving the second manipulator ( lifter ) a certain height
+void moveManipulator( int encoderValue, int speed ) //function for moving the second manipulator ( lifter ) a certain height
 {
   //In here, we need the "tower" to go up and drop the balls into the rolling ball "goal"
   
