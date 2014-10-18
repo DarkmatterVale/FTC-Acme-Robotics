@@ -45,14 +45,22 @@ manipulators and their associated methods and add additional methods to best sui
 void moveRobotForward( int speed )
 {
   //Rev 1.0
+  
   //This function will move the robot forward at a certain speed infinitesimally
+  
   //Inputs:
   	//Passed speed variable
+  	
   //Outputs:
   	//leftRobotMotor is set to different values ( 0 followed by speed variable )
   	//rightRobotMotor is set to different values ( 0 followed by speed variable )
+  	
   //To Do for this method:
   	//NONE
+  	
+  //Author(s):
+  	//Vale Tolpegin
+  	
   	
   	
   motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
@@ -66,15 +74,23 @@ void moveRobotForward( int speed )
 void moveRobotForward( int speed, int encoderValue )
 {
   //Rev 1.0
+  
   //This function will move the robot forward at a certain speed for a certain number of encoder ticks
+  
   //Inputs:
   	//Passed speed variable
   	//Passed encoderValue variable
+  
   //Outputs:
   	//leftRobotMotor is set to different values ( 0 followed by speed variable )
   	//rightRobotMotor is set to different values ( 0 followed by speed variable )
+  
   //To Do for this method:
   	//NONE
+  
+  //Author(s):
+  	//Vale Tolpegin
+  
   	
   	
   motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
