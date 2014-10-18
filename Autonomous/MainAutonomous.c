@@ -246,8 +246,26 @@ void moveRobotLeft( int speed, int encoderValue )
   motor[rightRobotMotor] = 0;
 }
 
-void moveRobotRight( int speed ) //function for moving right at a certain speed infinitesimally
+void moveRobotRight( int speed )
 {
+  /*
+  Rev 1.0
+  This function is used for turning the robot to the right at a certain speed infinitesimally
+  
+  Inputs:
+  	Passed speed variable
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
+  
+  To Do:
+  	NONE
+  	
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  
   motor[leftRobotMotor] = 0; //reset motors
   motor[rightRobotMotor] = 0;
   wait1Msec( 50 );
@@ -258,6 +276,28 @@ void moveRobotRight( int speed ) //function for moving right at a certain speed 
 
 void moveRobotRight( int speed, int encoderValue ) //function for passing number of encoder ticks that motors should move before stopping
 {
+  /*
+  Rev 1.0
+  This function is used for turning the robot to the right at a certain speed for a certain number of encoder ticks
+  
+  Inputs:
+  	Passed speed variable
+  	Passed encoderValue variable
+  	leftRobotMotor encoder
+  	rightRobotMotor encoder
+  	
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
+  
+  To Do:
+  	NONE
+  	
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  
   motor[leftRobotMotor] = 0; //resetting motors
   motor[rightRobotMotor] = 0;
   wait1Msec( 50 );
