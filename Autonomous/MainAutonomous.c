@@ -447,10 +447,27 @@ void findThreshHold()
   VARIABLE USED = SensorValue[ lightSensor ];
 }
 
-void initializeRobot() //function for initializing robot
+void initializeRobot()
 {
-  //In here, we should test all of the motors/moving parts of the robot by testing them for a couple of seconds, and then resetting the parts
+  /*
+  Rev 1.0
+  In here, we should test all of the motors/moving parts of the robot by testing them for a couple of seconds, and then resetting the parts
 
+  Inputs:
+  	servos
+  	sensors
+  Outputs:
+  	servos
+  
+  To Do:
+  	Remove code related to motors
+  	Continue to develop until working prototype
+  
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  
   //Find/Set threshhold for light sensor by calling findThreshHold()
   
   //Test main motors
@@ -489,32 +506,6 @@ void initializeRobot() //function for initializing robot
     //Mock launch as a test
 }
 
-void moveManipulator1( int encoderValue ) //function for moving the first manipulator ( Catapult ) a certain distance
-{
-  //In here, we need to move the first manipulator ( Catapult ) a certain degrees ( hence the encoderValue variable )
-  
-  //motor[catapultMotor] = SPEED;
-  
-  //while ( nMotorEncoder[catapultMotor] <= encoderValue )
-  //{
-  //}
-  
-  //motor[catapultMotor] = 0;
-}
-
-void moveManipulator1( int encoderValue, int speed ) //function for moving the first manipulator ( Catapult ) a certain distance
-{
-  //In here, we need to move the first manipulator ( Catapult ) a certain degrees ( hence the encoderValue variable )
-  
-  //motor[catapultMotor] = speed;
-  
-  //while ( nMotorEncoder[catapultMotor] <= encoderValue )
-  //{
-  //}
-  
-  //motor[catapultMotor] = 0;
-}
-
 void moveManipulator( int encoderValue ) //function for moving the second manipulator ( lifter ) a certain height
 {
   //In here, we need the "tower" to go up and drop the balls into the rolling ball "goal"
@@ -539,33 +530,6 @@ void moveManipulator( int encoderValue, int speed ) //function for moving the se
   //}
   
   //motor[liftMotor] = 0;
-}
-
-void moveManipulator2() //function for moving the second manipulator ( lifter ) a certain height
-{
-  //In here, move second manipulator ( lifter )
-  
-  //move Manipulator2
-  
-  //motor ( motor[liftMotor] = SPEED; )
-}
-
-void moveManipulator2( int speed ) //function for moving the second manipulator ( lifter ) a certain height
-{
-  //In here, move second manipulator ( lifter )
-  
-  //move Manipulator2
-  
-  //motor ( motor[liftMotor] = speed; )
-}
-
-void catapultLauncher() //function for dealing with the logic required to find the correct position, launch at a certain value of power
-{
-  //In here, we need to find IRBeacon and go to correct location
-  
-  //call findIRBeacon ( overloaded method, one for catapult, another for lift)
-  
-  //call moveManipulator1/2() with the correct encoder value
 }
 
 void pullBallHolder() //function for having the robot push the ball holders to the designated area
