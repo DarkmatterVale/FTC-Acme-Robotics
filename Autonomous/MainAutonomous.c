@@ -506,9 +506,26 @@ void initializeRobot()
     //Mock launch as a test
 }
 
-void moveManipulator( int encoderValue ) //function for moving the second manipulator ( lifter ) a certain height
+void moveManipulator( int encoderValue )
 {
-  //In here, we need the "tower" to go up and drop the balls into the rolling ball "goal"
+  /*
+  Rev 1.0
+  In here, we need the "tower" to go up and drop the balls into the rolling ball "goal"
+  
+  Inputs:
+  	Passed encoderValue variable
+  	liftMotor encoder value
+  Outputs:
+  	liftMotor
+  
+  To Do:
+  	Add SPEED value
+  	Change method name more appropriate for procedure function
+  
+  Author(s):
+  	Vale Tolpegin
+  */
+  
   
   //motor[liftMotor] = SPEED;
   
@@ -519,11 +536,29 @@ void moveManipulator( int encoderValue ) //function for moving the second manipu
   //motor[liftMotor] = 0;
 }
 
-void moveManipulator( int encoderValue, int speed ) //function for moving the second manipulator ( lifter ) a certain height
+void moveManipulator( int encoderValue, int speed )
 {
-  //In here, we need the "tower" to go up and drop the balls into the rolling ball "goal"
+  /*
+  Rev 1.0
+  In here, we need the "tower" to go up and drop the balls into the rolling ball "goal"
   
-  //motor[liftMotor] = speed;
+  Inputs:
+  	Passed encoderValue variable
+  	Passed speed variable
+  	liftMotor encoder value
+  Outputs:
+  	liftMotor
+  
+  To Do:
+  	Add SPEED value
+  	Change method name more appropriate for procedure function
+  
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  
+  //motor[liftMotor] = SPEED;
   
   //while ( nMotorEncoder[liftMotor] <= encoderValue )
   //{
@@ -532,10 +567,29 @@ void moveManipulator( int encoderValue, int speed ) //function for moving the se
   //motor[liftMotor] = 0;
 }
 
-void pullBallHolder() //function for having the robot push the ball holders to the designated area
+void pullBallHolder()
 {
-  //In here, we will need to have the robot push the ball holders/rollers into the box
+  /*
+  Rev 1.0
+  In here, we will need to have the robot push the ball holders/rollers into the box
   
+  Inputs:
+  	IR sensor
+  	Compass sensor
+  Outputs:
+  	functions invoked
+  
+  To Do:
+  	Change method name more appropriate for procedure function
+  	Edit and be more detailed in Inputs and Outputs area
+  
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  
+  Inputs:
+  	
   //find ball holder
     //seek IR beacon
       //call findIRBeacon
