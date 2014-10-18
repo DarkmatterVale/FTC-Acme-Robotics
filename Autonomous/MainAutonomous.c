@@ -33,7 +33,7 @@
 
 /*
 
-***VERY IMPORTANT***
+***VERY IMPORTANT---PLEASE READ***
 
 NOT ALL OF THE FOLLOWING METHODS WILL BE USED. I HAVE INCLUDED THEM ALL JUST TO BE ON THE SAFE SIDE OF WHAT MIGHT BE USEFUL
 
@@ -42,11 +42,17 @@ manipulators and their associated methods and add additional methods to best sui
 
 */
 
+//GLOBAL VARIABLES
+	//GLOBAL VARIABLES' DECLARATIONS GO HERE
+
 void moveRobotForward( int speed )
 {
   /*
   Rev 1.0
   This function will move the robot forward at a certain speed infinitesimally
+  
+  Variables Used:
+  	speed        ---used to set power level that the motors are set
   
   Inputs:
   	Passed speed variable
@@ -75,6 +81,10 @@ void moveRobotForward( int speed, int encoderValue )
   /*
   Rev 1.0
   This function will move the robot forward at a certain speed for a certain number of encoder ticks
+  
+  Variables Used:
+  	speed        ---used to set power level for the motors
+  	encoderValue ---used as the judge for when to stop the motors
   
   Inputs:
   	Passed speed variable
@@ -116,6 +126,9 @@ void moveRobotBackward( int speed )
   Rev 1.0
   This function is used to move the robot backward at a certain speed
   
+  Variables Used:
+  	speed        ---used to set the power level for the motors
+  
   Inputs:
   	Passed speed variable
   Outputs:
@@ -143,6 +156,10 @@ void moveRobotBackward( int speed, int encoderValue )
   /*
   Rev 1.0
   This function is used for moving the robot backward at a certain speed for a certain number of encoder ticks
+  
+  Variables Used:
+  	speed        ---used to set the power level for the motors
+  	encoderValue ---used as the judge for when to stop the motors
   
   Inputs:
   	Passed speed variable
