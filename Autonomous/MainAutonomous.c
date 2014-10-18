@@ -3,18 +3,18 @@
 //pragma statements will go here
 
 //Var/Config lines
-//Motors:
-  //leftMotor
-  //rightMotor
-  //liftMotor
-  //catapultMotor
-//Sensors:
-  //lightSensor ( two at the front of the robot )
-  //IRSensor
-  //Accelerometer
-  //DistanceSensor
-  //Compass sensor
-    //WE MIGHT NEED THIS TO DETERMINE WHERE WE ARE FACING, TO HELP US DECIDE HOW TO MOVE ( Forwards, backwards, left, right )
+	//Motors:
+  		//leftMotor
+  		//rightMotor
+  		//liftMotor
+  		//catapultMotor
+	//Sensors:
+  		//lightSensor ( two at the front of the robot )
+  		//IRSensor
+  		//Accelerometer
+  		//DistanceSensor
+  		//Compass sensor
+		  //WE MIGHT NEED THIS TO DETERMINE WHERE WE ARE FACING, TO HELP US DECIDE HOW TO MOVE ( Forwards, backwards, left, right )
   
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
