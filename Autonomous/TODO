@@ -10,19 +10,3 @@ MainAutonomous:
     5. ( Secondary Objective, programmed last ) Move ball "holders" to designated area to gain additional points
     6. Move to location we want to go to after autonomous
     7. ***IMPORTANT***: we need to add support for compass sensor to determine direction
-    
-AS OF THIS MOMENT, WE ARE ELIMINATING LIBRARIES--------
-
-Libraries:
-    1.IRBeacon
-        getIRBeaconValue() ( METHOD )
-        IRBeacon ( CONSTRUCTOR )
-    2. DistanceSensor
-        getDistance() ( METHOD )
-        DistanceSensor ( CONSTRUCTOR )
-    3. ColorSensor
-        getColor() ( METHOD )
-        ColorSensor ( CONSTRUCTOR )
-    4. 3 Axis Accelerometer
-        getPossibleMovement() ( METHOD )
-        3 Axis Accelerometer ( CONSTRUCTOR )
