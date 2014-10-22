@@ -33,6 +33,14 @@
 
 /*
 
+Author(s):
+	- Vale Tolpegin
+	- Ameer Rezazad
+	
+*/
+
+/*
+
 ***VERY IMPORTANT---PLEASE READ***
 
 NOT ALL OF THE FOLLOWING METHODS WILL BE USED. I HAVE INCLUDED THEM ALL JUST TO BE ON THE SAFE SIDE OF WHAT MIGHT BE USEFUL
@@ -44,7 +52,12 @@ manipulators and their associated methods and add additional methods to best sui
 
 //GLOBAL VARIABLES
 	//GLOBAL VARIABLES' DECLARATIONS GO HERE
+	
+/*
+To Do list:
+	- Move manipulator 1 method needs to be overloaded
 
+*/
 void moveRobotForward( int speed )
 {
   /*
