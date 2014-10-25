@@ -7,5 +7,6 @@ Current Version
 ----------------
 v0.1 ( NOT A WORKING VERSION )
 
-=================
+Due Date
+----------------
 Plan on being done with all of the code by the second week of November.
