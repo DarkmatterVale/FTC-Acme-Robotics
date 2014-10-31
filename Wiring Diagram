@@ -8,5 +8,18 @@ Battery
   -Motors
     -Left Drive motor ( TETRIX )
     -Right Drive motor ( TETRIX )
-    -Zip Tie motor ( LEGO )
     -Lift ( TETRIX )
+
+NXT
+    -Zip Tie motor ( LEGO )
+    -Sensors
+      -IR Sensor
+      -IR Sensor
+      -Ultrasonic Sensor
+      -Ultrasonic Sensor
+      -Color Sensor
+      -Color Sensor
+      -Gyroscopic Sensor
+      -Multiplexer
+      -Multiplexer
+      -Compass
