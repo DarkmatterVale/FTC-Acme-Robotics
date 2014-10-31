@@ -1,1 +1,12 @@
 Wiring Diagram below
+
+Battery
+  -Motor Encoders
+    - Left Drive motor Encoder
+    -Right Drive motor Encoder
+    -Lift motor Encoder
+  -Motors
+    -Left Drive motor ( TETRIX )
+    -Right Drive motor ( TETRIX )
+    -Zip Tie motor ( LEGO )
+    -Lift ( TETRIX )
