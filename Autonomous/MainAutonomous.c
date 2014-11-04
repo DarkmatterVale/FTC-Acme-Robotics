@@ -370,14 +370,6 @@ void findThreshHold()
     //Blue ground
     //Normal ground ( grey mat )
     //Yellow platform
-    //Red stick in center yellow
-    //Blue stick in center yellow
-  
-  /*
-  
-  NOT ALL OF THE FOLLOWING VALUES WILL BE USED. I JUST ADDED THEM TO MAKE SURE WE HAVE ALL THAT WE COULD NEED
-  
-  */
     
   //Get Red ramp value
   nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
@@ -442,30 +434,6 @@ void findThreshHold()
   //Get yellow platform value
   nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
   nxtDisplayTextLine( 1, "%s", "yellow platform, then " );
-  nxtDisplayTextLine( 2, "%s", "push the orange button" );
-
-  while ( !( nNxtButtonPressed == 3 ) )
-  {
-	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
-  }
-
-  VARIABLE USED = SensorValue[ lightSensor ];
-  
-  //Get red stick value
-  nxtDisplayTextLine( 0, "%s", "Place light sensor on " );
-  nxtDisplayTextLine( 1, "%s", "red stick, then " );
-  nxtDisplayTextLine( 2, "%s", "push the orange button" );
-
-  while ( !( nNxtButtonPressed == 3 ) )
-  {
-	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
-  }
-
-  VARIABLE USED = SensorValue[ lightSensor ];
-  
-  //Get blue stick value
-  nxtDisplayTextLine( 0, "%s", "Place light sensor on " );
-  nxtDisplayTextLine( 1, "%s", "blue stick, then " );
   nxtDisplayTextLine( 2, "%s", "push the orange button" );
 
   while ( !( nNxtButtonPressed == 3 ) )
@@ -688,7 +656,7 @@ void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
   //}
 }
 
-task main() //main function; where the program will start at run
+task main()
 {
   /*
   Rev 1.0
