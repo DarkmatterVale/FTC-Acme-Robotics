@@ -35,7 +35,6 @@
 
 Author(s):
 	- Vale Tolpegin
-	- Ameer Rezazad
 	
 */
 
