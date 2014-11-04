@@ -701,34 +701,11 @@ task main() //main function; where the program will start at run
   	Vale Tolpegin
   */
   
-  
-  //initializeRobot(); //initializing everything pertaining to the robot's function
-  
-  //seekIrBeacon(); //example calls
-  
-  //moveRobotForward(50);
-  
-  //here will be a function to raise the arm and lower it to drop starting ball into tube
-  
-  //In here will be the main part of the autonomous program
-  
   //Call InitializeRobot method
   
-  //POSSIBLE, NOT DECIDED
-    //Move into position to launch catapult
-  
-    //We should call a function to complete the Catapult launch part of the autonomous stage
-    /*
-      call catapult launcher ( will handle everything including getting sensorvalues and determing the correct course of action )
-    */
-  
-  //use ball in main ball manipulator to get into center ball holder
-  
-  //drop balls from center ball holder ( the one filled with balls at the beginning of the game )
+  //drop balls for center ball holder ( the one filled with balls at the beginning of the game )
   
   //move team goals to scoring area
-  
-  //go to location used we want to be at when the autonomous stage is complete
   
   //stop and wait for autonomous to end
 }
