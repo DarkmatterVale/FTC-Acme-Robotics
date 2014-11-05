@@ -50,3 +50,22 @@ void HTSMUXrun( tSensors smux )
   //Send message
   sendI2CMsg( smux, sendMsg, 0 );
 }
+
+task main()
+{
+  //setup/initialize
+  byte_array data;
+  SetSensorType( S1, sensorLowSpeed );
+  
+  //wait to make sure everything setup properly
+  wait1Msec( 200 );
+  
+  //send halt command
+  HTSMUXhalt( S1 );
+  
+  //send autodetect command
+  HTSMUXautodetect( S1 );
+  
+  //send run command
+  HTSMUXrun( S1 );
+}
