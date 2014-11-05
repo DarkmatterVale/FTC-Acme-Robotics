@@ -17,3 +17,8 @@ void HTSMUXhalt( tSensors smux )
   //Required wait time
   wait1Msec( 50 );
 }
+
+void HTSMUXautodetect( tSensors smux )
+{
+  //Add autodetect code
+}
