@@ -20,5 +20,18 @@ void HTSMUXhalt( tSensors smux )
 
 void HTSMUXautodetect( tSensors smux )
 {
-  //Add autodetect code
+  //Creating message to send
+  ubyte sendMsg[4];
+  
+  //Assigning message info
+  sendMsg[0] = 3;
+  sendMsg[1] = 0x10;
+  sendMsg[2] = 0x20;
+  sendMsg[3] = 1;
+  
+  //Sending message
+  sendI2CMsg( smux, sendMsg, 0 );
+  
+  //Required wait time
+  wait1Msec( 500 );
 }
