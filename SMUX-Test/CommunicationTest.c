@@ -44,4 +44,9 @@ void HTSMUXrun( tSensors smux )
   //Assigning message info
   sendMsg[0] = 3;
   sendMsg[1] = 0x10;
+  sendMsg[2] = 0x20;
+  sendMsg[3] = 2;
+  
+  //Send message
+  sendI2CMsg( smux, sendMsg, 0 );
 }
