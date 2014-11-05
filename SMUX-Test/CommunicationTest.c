@@ -35,3 +35,13 @@ void HTSMUXautodetect( tSensors smux )
   //Required wait time
   wait1Msec( 500 );
 }
+
+void HTSMUXrun( tSensors smux )
+{
+  //Creating message to send
+  ubyte sendMsg[4];
+  
+  //Assigning message info
+  sendMsg[0] = 3;
+  sendMsg[1] = 0x10;
+}
