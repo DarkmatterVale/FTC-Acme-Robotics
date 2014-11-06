@@ -409,7 +409,7 @@ void findThreshHold()
 void initializeRobot()
 {
   /*
-  Rev 1.0
+  Rev 1.1
   In here, we should test all of the motors/moving parts of the robot by testing them for a couple of seconds, and then resetting the parts
 
   Inputs:
@@ -431,17 +431,19 @@ void initializeRobot()
   
   //Test main motors
     //Left movement motor and thus the left tread
+    	//motor[leftMotor] = 70;
     //right movement motor and thus the right tread
-    
-    //example:
       //motor[rightMotor] = 70;
-      //motor[leftMotor] = 70;
   
   //Test sensors, provide feedback on a small LED matrix, green for in the clear, red for not in the clear
     //feedback from the distance sensor ( SensorValue[distanceSensor] != 0 )
+    //feedback from the 2nd distance sensor ( SensorValue[distanceSensor2] != 0 )
     //feedback from the light sensor ( SensorValue[lightSensor] != 0 )
-    //feedback from the accelerometer ( SensorValue[accelerometerSensor] != 0 )
+    //feedback from the 2nd light sensor ( SensorValue[lightSensor2] != 0 )
+    //feedback from the gyroscope ( SensorValue[gyroscopeSensor] != 0 )
     //feedback from the IR Sensor ( SensorValue[IRSensor] != 0 )
+    //feedback from the 2nd IR Sensor ( SensorValue[IRSensor2] != 0 )
+    //feedback from the Compass ( SensorValue[compassSensor] != 0 )
   
   //Test lift
     //Bring lift up
@@ -459,10 +461,7 @@ void initializeRobot()
       //move servo a full rotation
   
   //Test rolling goal holder
-    //drop posts
-  
-  //Test Catapult/Thrower ( POSSIBLE, NOT SET IN STONE )
-    //Mock launch as a test
+    //drop post
 }
 
 void moveManipulator( int encoderValue )
