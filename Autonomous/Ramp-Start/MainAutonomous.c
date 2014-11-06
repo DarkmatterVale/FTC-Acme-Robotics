@@ -278,7 +278,7 @@ void moveRobotLeft( int speed, int encoderValue )
 void moveRobotRight( int speed )
 {
   /*
-  Rev 1.0
+  Rev 1.1
   This function is used for turning the robot to the right at a certain speed infinitesimally
   
   Inputs:
@@ -303,7 +303,7 @@ void moveRobotRight( int speed )
   motor[rightRobotMotor] = -speed;
 }
 
-void moveRobotRight( int speed, int encoderValue ) //function for passing number of encoder ticks that motors should move before stopping
+void moveRobotRight( int speed, int encoderValue )
 {
   /*
   Rev 1.0
