@@ -1,8 +1,4 @@
-//Main source code for autonomous period
-
-//pragma statements will go here
-
-//Var/Config lines
+//Var/Config pragma lines
 	//Motors:
   		//leftMotor
   		//rightMotor
