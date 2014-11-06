@@ -4,31 +4,19 @@ I have begun to design which classes will have to be created, but since the comp
 
 Autonomous:
   -Main ( PSUEDOCODE COMPLETED! )
-    -Move Robot Left ( Method/Function ) ( COMPLETED )
-    -Move Robot Left w/ Encoder Parameter( Method/Function ) ( COMPLETED )
-    -Move Robot Right ( Method/Function ) ( COMPLETED )
-    -Move Robot Right w/ Encoder Parameter ( Method/Function ) ( COMPLETED )
-    -Move Robot Forward ( Method/Function ) ( COMPLETED )
-    -Move Robot Forward w/ Encoder Parameter ( Method/Function ) ( COMPLETED )
-    -Move Robot Backward ( Method/Function ) ( COMPLETED )
-    -Move Robot Backward w/ Encoder Parameter ( Method/Function ) ( COMPLETED )
+    -Move Robot Left w/ Speed Parameter ( Method/Function ) ( COMPLETED )
+    -Move Robot Left w/ Encoder and Speed Parameter( Method/Function ) ( COMPLETED )
+    -Move Robot Right w/ Speed Parameter( Method/Function ) ( COMPLETED )
+    -Move Robot Right w/ Encoder and Speed Parameter ( Method/Function ) ( COMPLETED )
+    -Move Robot Forward w/ Speed Parameter ( Method/Function ) ( COMPLETED )
+    -Move Robot Forward w/ Encoder and Speed Parameter ( Method/Function ) ( COMPLETED )
+    -Move Robot Backward w/ Speed Parameter ( Method/Function ) ( COMPLETED )
+    -Move Robot Backward w/ Encoder and Speed Parameter ( Method/Function ) ( COMPLETED )
     -Initialize Robot ( Method/Function )
     -Main ( Method/Function )
     -Move Manipulator 1 w/ Encoder Parameter ( Method/Function )
+    -Move Manipulator 1 w/ Encoder and Speed Parameter ( Method/Function )
     -Drag Ball Holder ( Method/Function )
-  -Ultrasonic/Distance sensor
-    -Get SensorValue ( Method/Function )
-  -Color sensor
-    -Get SensorValue ( Method/Function )
-  -( Possible ) Touch Sensor
-    -Get SensorValue ( Method/Function )
-  -IR sensor
-    -Get SensorValue ( Method/Function )
-  -3 Axis Accelerometer
-    -Get SensorValue ( Method/Function )
-  -Encoders
-    -Get SensorValue ( Method/Function )
-    -Set SensorValue ( Method/Function )
   
   -------------
 
