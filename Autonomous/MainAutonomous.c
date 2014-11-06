@@ -347,11 +347,12 @@ void moveRobotRight( int speed, int encoderValue ) //function for passing number
 void findThreshHold()
 {
   /*
-  Rev 1.0
+  Rev 1.1
   In this function, we need to set the threshhold(s) for the light sensor and tell it the values of all of the lines on the board
   
   Inputs:
   	color sensor
+  	orange button on NXT
   	
   Outputs:
   	Variables' values
@@ -369,7 +370,6 @@ void findThreshHold()
     //Red ground
     //Blue ground
     //Normal ground ( grey mat )
-    //Yellow platform
     
   //Get Red ramp value
   nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
@@ -422,18 +422,6 @@ void findThreshHold()
   //Get grey mat value
   nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
   nxtDisplayTextLine( 1, "%s", "gray mat, then " );
-  nxtDisplayTextLine( 2, "%s", "push the orange button" );
-
-  while ( !( nNxtButtonPressed == 3 ) )
-  {
-	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
-  }
-
-  VARIABLE USED = SensorValue[ lightSensor ];
-  
-  //Get yellow platform value
-  nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
-  nxtDisplayTextLine( 1, "%s", "yellow platform, then " );
   nxtDisplayTextLine( 2, "%s", "push the orange button" );
 
   while ( !( nNxtButtonPressed == 3 ) )
