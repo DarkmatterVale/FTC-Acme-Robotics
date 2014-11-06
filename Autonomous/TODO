@@ -9,9 +9,11 @@ MainAutonomous ( Parking Zone Start ):
     4. ( Secondary Objective, programmed last ) Move ball "holders" to designated area to gain additional points
     5. Move to location we want to go to after autonomous
     6. ***IMPORTANT***: we need to add support for compass sensor to determine direction
+    7. SMUX compatibility
     
 MainAutonomous ( Ramp Start ):
     1. Initialize Robot
     2. Drive down ramp
     3. Use manipulator to put ball in closest tube
     4. Move tube(s) to parking zone
+    5. SMUX compatibility
