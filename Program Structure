@@ -15,28 +15,20 @@ Autonomous:
     -Initialize Robot ( Method/Function )
     -Main ( Method/Function )
     -Move Manipulator 1 w/ Encoder Parameter ( Method/Function )
-    -Move Manipulator 2 w/ Encoder Parameter ( Method/Function )
-    -Drag/Push Ball Holder ( Method/Function )
+    -Drag Ball Holder ( Method/Function )
   -Ultrasonic/Distance sensor
     -Get SensorValue ( Method/Function )
-    -No-arg Constructor ( Method/Function )
   -Color sensor
     -Get SensorValue ( Method/Function )
-    -No-arg Constructor ( Method/Function )
   -( Possible ) Touch Sensor
     -Get SensorValue ( Method/Function )
-    -No-arg Constructor ( Method/Function )
   -IR sensor
     -Get SensorValue ( Method/Function )
-    -No-arg Constructor ( Method/Function )
   -3 Axis Accelerometer
     -Get SensorValue ( Method/Function )
-    -No-arg Constructor
   -Encoders
     -Get SensorValue ( Method/Function )
     -Set SensorValue ( Method/Function )
-    -No-arg Constructor ( Method/Function )
-    -Arg Constructor ( Method/Function )
   
   -------------
 
