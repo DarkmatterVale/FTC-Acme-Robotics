@@ -453,6 +453,11 @@ void findThreshHold()
   VARIABLE USED = SensorValue[ lightSensor ];
 }
 
+void smuxInitialization()
+{
+	//Initialize SMUXs
+}
+
 void initializeRobot()
 {
   /*
@@ -475,6 +480,9 @@ void initializeRobot()
   
   
   //Find/Set threshhold for light sensor by calling findThreshHold()
+  
+  //initialize SMUXs
+  	//smuxInitialization();
   
   //Test main motors
     //Left movement motor and thus the left tread
