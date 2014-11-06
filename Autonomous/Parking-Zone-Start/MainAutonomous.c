@@ -1,5 +1,292 @@
 //File containing instructions for parking zone start
 
+void moveRobotForward( int speed )
+{
+  /*
+  Rev 1.0
+  This function will move the robot forward at a certain speed infinitesimally
+  
+  Variables Used:
+  	speed        ---used to set power level that the motors are set
+  
+  Inputs:
+  	Passed speed variable
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
+  	
+  To Do:
+  	NONE
+  	
+  Author(s):
+  	Vale Tolpegin
+  */
+  	
+  	
+  motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
+  motor[rightRobotMotor] = 0;
+  wait1Msec( 50 );
+  
+  motor[leftRobotMotor] = speed; //setting the motors to the passed speed variable level power level ( in percent of highest possible speed )
+  motor[rightRobotMotor] = speed;
+}
+
+void moveRobotForward( int speed, int encoderValue )
+{
+  /*
+  Rev 1.0
+  This function will move the robot forward at a certain speed for a certain number of encoder ticks
+  
+  Variables Used:
+  	speed        ---used to set power level for the motors
+  	encoderValue ---used as the judge for when to stop the motors
+  
+  Inputs:
+  	Passed speed variable
+  	Passed encoderValue variable
+  	leftRobotMotor encoder
+  	rightRobotMotor encoder
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
+  	
+  To Do:
+  	NONE
+  
+  Author(s):
+  	Vale Tolpegin
+  */
+  	
+  	
+  motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
+  motor[rightRobotMotor] = 0;
+  wait1Msec( 50 );
+  
+  nMotorEncoder[leftRobotMotor] = 0; //resetting encoder values
+  nMotorEncoder[rightRobotMotor] = 0;
+  
+  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //while encoders have not moved past allowed distance
+  {
+    motor[leftRobotMotor] = speed; //setting motors to passed speed variable power level
+    motor[rightRobotMotor] = speed;
+  }
+  
+  motor[leftRobotMotor] = 0; //stopping motors after movement duration has occurred
+  motor[rightRobotMotor] = 0;
+}
+
+void moveRobotBackward( int speed )
+{
+  /*
+  Rev 1.0
+  This function is used to move the robot backward at a certain speed
+  
+  Variables Used:
+  	speed        ---used to set the power level for the motors
+  
+  Inputs:
+  	Passed speed variable
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
+  	
+  To Do:
+  	NONE
+  
+  Author(s):
+  	Vale Tolpegin
+  */	
+  	
+  	
+  motor[leftRobotMotor] = 0; //reset motors
+  motor[rightRobotMotor] = 0;
+  wait1Msec( 50 );
+  
+  motor[leftRobotMotor] = -speed; //go backward
+  motor[rightRobotMotor] = -speed;
+}
+
+void moveRobotBackward( int speed, int encoderValue )
+{
+  /*
+  Rev 1.0
+  This function is used for moving the robot backward at a certain speed for a certain number of encoder ticks
+  
+  Variables Used:
+  	speed        ---used to set the power level for the motors
+  	encoderValue ---used as the judge for when to stop the motors
+  
+  Inputs:
+  	Passed speed variable
+  	Passed encoderValue variable
+  	leftRobotMotor encoder
+  	rightRobotMotor encoder
+  Outputs:
+  	leftRobotMotor
+  	RightRobotMotor
+  
+  To Do:
+  	NONE
+  
+  Author(s):
+  	Vale Tolpegin
+  */
+  	
+  	
+  motor[leftRobotMotor] = 0; //reset motors
+  motor[rightRobotMotor] = 0;
+  wait1Msec( 50 );
+  
+  nMotorEncoder[leftRobotMotor] = 0; //reset motor encoders
+  nMotorEncoder[rightRobotMotor] = 0;
+  
+  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //while encoders havent gone pase what is allowed
+  {
+    motor[leftRobotMotor] = -speed; //go backward
+    motor[rightRobotMotor] = -speed;
+  }
+  
+  motor[leftRobotMotor] = 0; //stop motors
+  motor[rightRobotMotor] = 0;
+}
+
+void moveRobotLeft( int speed )
+{
+  /*
+  Rev 1.0
+  This function is used for turning the robot left at the passed speed variable infinitesimally
+  
+  Inputs:
+  	Passed speed variable
+  Outputs:
+  	leftRobotMotor
+  	RightRobotMotor
+  
+  To Do:
+  	NONE
+  
+  Author(s):
+  	Vale Tolpegin
+  */	
+  	
+  	
+  motor[leftRobotMotor] = 0; //stopping motors to eliminate course deviations
+  motor[rightRobotMotor] = 0;
+  wait1Msec( 50 );
+  
+  motor[leftRobotMotor] = -speed; //setting motors to speed variable. Since I want to turn left, making the left motor the negative of the value for the second motor
+  motor[rightRobotMotor] = speed;
+}
+
+void moveRobotLeft( int speed, int encoderValue )
+{
+  /*
+  Rev 1.0
+  This function is used for turning the robot left at a passed speed value for a certain number of encoder ticks
+  
+  Inputs:
+  	Passed speed variable
+  	Passed encoderValue variable
+  	leftRobotMotor encoder
+  	rightRobotMotor encoder
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
+  
+  To Do:
+  	NONE
+  	
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  
+  motor[leftRobotMotor] = 0; //stopping motors to prevent course deviations
+  motor[rightRobotMotor] = 0;
+  wait1Msec( 50 );
+  
+  nMotorEncoder[leftRobotMotor] = 0; //resetting encoder values
+  nMotorEncoder[rightRobotMotor] = 0;
+  
+  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //while encoders have not moved past allowed distance
+  {
+    motor[leftRobotMotor] = -speed; //setting motors to passed speed variable power level
+    motor[rightRobotMotor] = speed;
+  }
+  
+  motor[leftRobotMotor] = 0; //stopping motors after the robots have moved for the set amount of time
+  motor[rightRobotMotor] = 0;
+}
+
+void moveRobotRight( int speed )
+{
+  /*
+  Rev 1.1
+  This function is used for turning the robot to the right at a certain speed infinitesimally
+  
+  Inputs:
+  	Passed speed variable
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
+  
+  To Do:
+  	NONE
+  	
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  
+  motor[leftRobotMotor] = 0; //reset motors
+  motor[rightRobotMotor] = 0;
+  wait1Msec( 50 );
+  
+  motor[leftRobotMotor] = speed; //turn right
+  motor[rightRobotMotor] = -speed;
+}
+
+void moveRobotRight( int speed, int encoderValue )
+{
+  /*
+  Rev 1.0
+  This function is used for turning the robot to the right at a certain speed for a certain number of encoder ticks
+  
+  Inputs:
+  	Passed speed variable
+  	Passed encoderValue variable
+  	leftRobotMotor encoder
+  	rightRobotMotor encoder
+  	
+  Outputs:
+  	leftRobotMotor
+  	rightRobotMotor
+  
+  To Do:
+  	NONE
+  	
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  
+  motor[leftRobotMotor] = 0; //resetting motors
+  motor[rightRobotMotor] = 0;
+  wait1Msec( 50 );
+  
+  nMotorEncoder[leftRobotMove] = 0; //resetting robot motor encoders
+  nMotorEncoder[rightRobotMove] = 0;
+  
+  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //move while encoder ticks is less than the wanted amount
+  {
+    motor[leftRobotMotor] = speed; //turn right
+    motor[rightRobotMotor] = -speed;
+  }
+  
+  motor[leftRobotMotor] = 0; //once done, stop motors
+  motor[rightRobotMotor] = 0;
+}
+
 void seekIrBeacon()
 {
   /*
