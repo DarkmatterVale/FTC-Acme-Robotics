@@ -564,36 +564,6 @@ void moveManipulator( int encoderValue, int speed )
   //motor[liftMotor] = 0;
 }
 
-void pullBallHolder()
-{
-  /*
-  Rev 1.0
-  In here, we will need to have the robot push the ball holders/rollers into the box
-  
-  Inputs:
-  	IR sensor
-  	Compass sensor
-  Outputs:
-  	functions invoked
-  
-  To Do:
-  	Change method name more appropriate for procedure function
-  	Edit and be more detailed in Inputs and Outputs area
-  
-  Author(s):
-  	Vale Tolpegin
-  */
-  
-  
-  //find ball holder
-    //seek IR beacon
-      //call findIRBeacon
-        //MAYBE WE SHOULD OVERLOAD THE METHOD, ALLOWING FOR A MORE CASE BY CASE DEALING WITH WHAT WE DO WHEN WE FIND THE IR BEACON
-    //based on location of IR Beacon and robot, move robot towards ball holder
-  
-  //drop ball holder posts
-}
-
 void seekIrBeacon()
 {
   /*
@@ -632,13 +602,22 @@ void seekIrBeacon()
 void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
 {
   /*
+  Rev 1.0
+  In here, we will need to have the robot push the ball holders/rollers into the box
   
-  ***DETERMINE WHAT TO DO WITH THIS FUNCTION. IT IS A COPY OF AN ABOVE FUNCTION***
+  Inputs:
+  	IR sensor
+  	Compass sensor
+  Outputs:
+  	functions invoked
   
+  To Do:
+  	Change method name more appropriate for procedure function
+  	Edit and be more detailed in Inputs and Outputs area
+  
+  Author(s):
+  	Vale Tolpegin
   */
-  
-  
-  //Successfully have robot drag goals into scoring zone
   
   //for ( int i = 0; i < 3; i++ )
   //{
