@@ -347,7 +347,7 @@ void moveRobotRight( int speed, int encoderValue ) //function for passing number
 void findThreshHold()
 {
   /*
-  Rev 1.1
+  Rev 2.0
   In this function, we need to set the threshhold(s) for the light sensor and tell it the values of all of the lines on the board
   
   Inputs:
@@ -365,13 +365,11 @@ void findThreshHold()
   */
   
   //We need to get values for:
-    //Red ramp
-    //Blue ramp
-    //Red ground
-    //Blue ground
+    //ramp
+    //ground tape
     //Normal ground ( grey mat )
     
-  //Get Red ramp value
+  //Get ramp value
   nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
   nxtDisplayTextLine( 1, "%s", "the red ramp, then " );
   nxtDisplayTextLine( 2, "%s", "push the orange button" );
@@ -383,33 +381,9 @@ void findThreshHold()
 
   VARIABLE USED = SensorValue[ lightSensor ];
   
-  //Get Blue ramp value
-  nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
-  nxtDisplayTextLine( 1, "%s", "tbe blue ramp, then " );
-  nxtDisplayTextLine( 2, "%s", "push the orange button" );
-
-  while ( !( nNxtButtonPressed == 3 ) )
-  {
-	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
-  }
-
-  VARIABLE USED = SensorValue[ lightSensor ];
-  
-  //Get red surface value
+  //Get surface value
   nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
   nxtDisplayTextLine( 1, "%s", "red surface line, then " );
-  nxtDisplayTextLine( 2, "%s", "push the orange button" );
-
-  while ( !( nNxtButtonPressed == 3 ) )
-  {
-	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
-  }
-
-  VARIABLE USED = SensorValue[ lightSensor ];
-  
-  //Get blue surface value
-  nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
-  nxtDisplayTextLine( 1, "%s", "blue surface line, then " );
   nxtDisplayTextLine( 2, "%s", "push the orange button" );
 
   while ( !( nNxtButtonPressed == 3 ) )
