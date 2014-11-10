@@ -457,7 +457,17 @@ void findThreshHold()
 
 void smuxInitialization()
 {
-	//Initialize SMUXs
+	//Set the NXT sensor port S1 to be compatible with the SMUX
+	SetSensorType( S1, sensorLowSpeed );
+	
+	//Have the SMUX enter the halted state
+	HTSMUXhalt( S1 );
+	
+	//Have the SMUX enter the autodetect state
+	HTSMUXautodetect( S1 );
+	
+	//Have the SMUX enter the run state
+	HTSMUXrun( S1 );
 }
 
 void initializeRobot()
