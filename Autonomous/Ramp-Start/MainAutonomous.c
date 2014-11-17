@@ -561,7 +561,7 @@ void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
       //turn around
   
     //grab goal
-      //drop posts
+      //drop post
   
     //drag to scoring zone
       //move towards scoring zone
@@ -575,7 +575,7 @@ task main()
   This is the main task which begins running once the competition starts
   
   To Do:
-  	NONE
+  	Add code
   
   Author(s):
   	Vale Tolpegin
@@ -583,9 +583,13 @@ task main()
   
   //Call InitializeRobot method
   
-  //drop balls for center ball holder ( the one filled with balls at the beginning of the game )
+  //drop ball in goal ( middle high )
+  	//move toward goal
+  	//turn aroung
+  	//grab goal
+  	//
   
   //move team goals to scoring area
   
-  //stop and wait for autonomous to end
+  //stop
 }
