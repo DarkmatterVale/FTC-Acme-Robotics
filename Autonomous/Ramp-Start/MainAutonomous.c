@@ -55,56 +55,6 @@ To Do list:
 	- Move manipulator 1 method needs to be overloaded
 
 */
-void HTSMUXhalt( tSensors smux )
-{
-  //Creating message to send
-  ubyte sendMsg[4];
-  
-  //Assigning message info
-  sendMsg[0] = 3;
-  sendMsg[1] = 0x10;
-  sendMsg[2] = 0x20;
-  sendMsg[3] = 0;
-  
-  //Sending message
-  sendI2CMsg( smux, sendMsg, 0 );
-  
-  //Required wait time
-  wait1Msec( 50 );
-}
-
-void HTSMUXautodetect( tSensors smux )
-{
-  //Creating message to send
-  ubyte sendMsg[4];
-  
-  //Assigning message info
-  sendMsg[0] = 3;
-  sendMsg[1] = 0x10;
-  sendMsg[2] = 0x20;
-  sendMsg[3] = 1;
-  
-  //Sending message
-  sendI2CMsg( smux, sendMsg, 0 );
-  
-  //Required wait time
-  wait1Msec( 500 );
-}
-
-void HTSMUXrun( tSensors smux )
-{
-  //Creating message to send
-  ubyte sendMsg[4];
-  
-  //Assigning message info
-  sendMsg[0] = 3;
-  sendMsg[1] = 0x10;
-  sendMsg[2] = 0x20;
-  sendMsg[3] = 2;
-  
-  //Send message
-  sendI2CMsg( smux, sendMsg, 0 );
-}
 
 void moveRobotForward( int speed )
 {
@@ -457,17 +407,7 @@ void findThreshHold()
 
 void smuxInitialization()
 {
-	//Set the NXT sensor port S1 to be compatible with the SMUX
-	SetSensorType( S1, sensorLowSpeed );
-	
-	//Have the SMUX enter the halted state
-	HTSMUXhalt( S1 );
-	
-	//Have the SMUX enter the autodetect state
-	HTSMUXautodetect( S1 );
-	
-	//Have the SMUX enter the run state
-	HTSMUXrun( S1 );
+	//Initialize Robot
 }
 
 void initializeRobot()
