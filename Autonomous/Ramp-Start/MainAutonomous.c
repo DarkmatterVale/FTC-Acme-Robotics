@@ -369,37 +369,37 @@ void findThreshHold()
     //Normal ground ( grey mat )
     
   //Get ramp value
-  nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
-  nxtDisplayTextLine( 1, "%s", "the red ramp, then " );
-  nxtDisplayTextLine( 2, "%s", "push the orange button" );
+  nxtDisplayCenteredTextLine( 0, "Place light sensor over " );
+  nxtDisplayCenteredTextLine( 1, "the red ramp, then " );
+  nxtDisplayCenteredTextLine( 2, "push the orange button" );
 
   while ( !( nNxtButtonPressed == 3 ) )
   {
-	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
+	nxtDisplayCenteredTextLine( 3, " light value: %d", SensorValue[ lightSensor ] );
   }
 
   VARIABLE USED = SensorValue[ lightSensor ];
   
   //Get surface value
-  nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
-  nxtDisplayTextLine( 1, "%s", "red surface line, then " );
-  nxtDisplayTextLine( 2, "%s", "push the orange button" );
+  nxtDisplayCenteredTextLine( 0, "Place light sensor over " );
+  nxtDisplayCenteredTextLine( 1, "red surface line, then " );
+  nxtDisplayCenteredTextLine( 2, "push the orange button" );
 
   while ( !( nNxtButtonPressed == 3 ) )
   {
-	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
+	nxtDisplayCenteredTextLine( 3, "light value: %d", SensorValue[ lightSensor ] );
   }
 
   VARIABLE USED = SensorValue[ lightSensor ];
   
   //Get grey mat value
-  nxtDisplayTextLine( 0, "%s", "Place light sensor over " );
-  nxtDisplayTextLine( 1, "%s", "gray mat, then " );
-  nxtDisplayTextLine( 2, "%s", "push the orange button" );
+  nxtDisplayCenteredTextLine( 0, "Place light sensor over " );
+  nxtDisplayCenteredTextLine( 1, "gray mat, then " );
+  nxtDisplayCenteredTextLine( 2, "push the orange button" );
 
   while ( !( nNxtButtonPressed == 3 ) )
   {
-	nxtDisplayTextLine( 3, "%s, %d", "light value: ", SensorValue[ lightSensor ] );
+	nxtDisplayCenteredTextLine( 3, "light value: %d", SensorValue[ lightSensor ] );
   }
 
   VARIABLE USED = SensorValue[ lightSensor ];
