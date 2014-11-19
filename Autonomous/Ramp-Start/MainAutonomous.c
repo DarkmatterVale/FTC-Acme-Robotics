@@ -14,6 +14,15 @@
   		//DistanceSensor 2
   		//Compass sensor
   
+//Defines
+#define FORWARD_STANDARD 60
+#define FORWARD_FULL 100
+
+#define STOP 0
+
+#define BACKWARD_STANDARD 60
+#define BACKWARD_FULL 100
+  
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //                                        Autonomous mode program for FTC Team 7983
