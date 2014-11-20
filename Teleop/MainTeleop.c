@@ -10,10 +10,8 @@ task main()
     //getjoysticksettings()
     getJoystickSettings( joystick );
     
-    //if joystick controls ( y1 & y2 ) have high values
-      //go forward at full power
-    //else if joystick controls ( y1 & y2 ) do not have high values
-      //go backward
+    motor[ leftDriveMotor ] = ( int ) pow( 0.006( joystick.joy1_y1 ), 2 ) - 1;
+    motor[ rightDriveMotor ] = ( int ) pow( 0.006( joystick.joy1_y2 ), 2 ) - 1;
       
     //getjoysticksettings
     getJoystickSettings( joystick );
