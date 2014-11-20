@@ -1,11 +1,14 @@
-//Put main file code for Teleop Program
+//Add config variables here
+
+#include "JoystickDriver.c";
 
 task main()
 {
-  //here, put all the code for getting joystick settings ( getjoysticksettings() ), moving the robot when a button is pressed, etc
-  
   //while loop ( forever )
+  while ( true )
+  {
     //getjoysticksettings()
+    getJoystickSettings( joystick );
     
     //if joystick controls ( y1 & y2 ) have high values
       //go forward at full power
@@ -13,6 +16,7 @@ task main()
       //go backward
       
     //getjoysticksettings
+    getJoystickSettings( joystick );
     
     //if joystick button ( button that will use tower lift ) is pressed
       //move tower lift upward
