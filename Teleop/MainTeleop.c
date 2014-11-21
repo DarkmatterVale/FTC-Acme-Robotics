@@ -1,13 +1,13 @@
 //Add config variables here
 
-#define FIRST_LIFT_POSITION //Add encoder value here
-#define SECOND_LIFT_POSITION //Add encoder value here
-#define THIRD_LIFT_POSITION //Add encoder value here
-#define FOURTH_LIFT_POSITION //Add encoder value here
-#define ZERO_LIFT_POSITION //Add encoder value here
+#define FIRST_LIFT_POSITION 100 //Add value here
+#define SECOND_LIFT_POSITION 200 //Add value here
+#define THIRD_LIFT_POSITION 300 //Add value here
+#define FOURTH_LIFT_POSITION 400 //Add value here
+#define ZERO_LIFT_POSITION 0 //Add value here
 
-#define GOAL_HOLDER_ACTIVE //Add encoder value here
-#define GOAL_HOLDER_INACTIVE //Add encoder value here
+#define GOAL_HOLDER_ACTIVE 100 //Add encoder value here
+#define GOAL_HOLDER_INACTIVE 0 //Add encoder value here
 
 /*
 
@@ -43,6 +43,10 @@ task main()
   	Vale Tolpegin
   */
   
+  //creating variables that will hold position values for manipulators
+  int liftPosition = 0;
+  int goalHolderPosition = 0;
+  
   //while loop ( forever ) or until program terminated
   while ( true )
   {
@@ -60,12 +64,46 @@ task main()
     if ( )
     {
       //move tower lift up to the next position
+      switch ( liftPosition )
+      {
+        case 0:
+          moveMotor( "liftMotor", FIRST_LIFT_POSITION, 60 );
+          break;
+        case 1:
+          moveMotor( "liftMotor", SECOND_LIFT_POSITION, 60 );
+          break;
+        case 2:
+          moveMotor( "liftMotor", THIRD_LIFT_POSITION, 60 );
+          break;
+        case 3:
+          moveMotor( "liftMotor", FOURTH_LIFT_POSITION, 60 );
+          break;
+        case 4:
+          break;
+      }
     }
     
     //if joystick button ( button that will use tower lift to go down) is pressed
     else if ( )
     {
       //move tower lift down to the next position
+      switch ( liftPosition )
+      {
+        case 0:
+          break;
+        case 1:
+          moveMotor( "liftMotor", -1 * FIRST_LIFT_POSITION, -60 );
+          break;
+        case 2:
+          moveMotor( "liftMotor", -1 * SECOND_LIFT_POSITION, -60 );
+          break;
+        case 3:
+          moveMotor( "liftMotor", -1 * THIRD_LIFT_POSITION, -60 );
+          break;
+        case 4:
+          moveMotor( "liftMotor", -1 * FOURTH_LIFT_POSITION, -60 );
+          break;
+      }
     }
       
     //if button ( button to lock rolling goal to robot ) is pressed
@@ -85,12 +123,23 @@ task main()
 
 void moveMotor( String motorName, int encoderValue, int speed )
 {
-  nMotorEncoder[ motorName ] = 0;
+  int tempEncoderValue = nMotorEncoder[ motorName ];
   
-  while ( nMotorEncoder[ motorName ] < encoderValue )
+  if ( nMotorEncoder[ motorName ] > 0 )
   {
-    motor[ motorName ] = speed;
-  }
+    while ( ( nMotorEncoder[ motorName ] - tempEncoderValue ) < encoderValue )
+    {
+      motor[ motorName ] = speed;
+    }
   
-  motor[ motorName ] = 0;
+    motor[ motorName ] = 0;
+  } else if ( nMotorEncoder[ motorName ] < 0 )
+  {
+    while ( ( nMotorEncoder[ motorName ] - tempEncoderValue ) > encoderValue )
+    {
+      motor[ motorName ] = speed;
+    }
+  
+    motor[ motorName ] = 0;
+  }
 }
