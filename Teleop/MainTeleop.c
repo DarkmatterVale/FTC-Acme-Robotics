@@ -1,13 +1,24 @@
 //Add config variables here
 
+#define FIRST_LIFT_POSITION //Add encoder value here
+#define SECOND_LIFT_POSITION //Add encoder value here
+#define THIRD_LIFT_POSITION //Add encoder value here
+#define FOURTH_LIFT_POSITION //Add encoder value here
+#define ZERO_LIFT_POSITION //Add encoder value here
+
+#define GOAL_HOLDER_ACTIVE //Add encoder value here
+#define GOAL_HOLDER_INACTIVE //Add encoder value here
+
 /*
 
   Joystick 1 will move the robot's drive motors -> Aiden will be the driver
-  Joystick 2 will move the robot's lift -> Vale will drive the lift and manipulators
+  Joystick 2 will move the robot's lift -> Vale will drive the lift and other manipulators
 
 */
 
 #include "JoystickDriver.c";
+
+void moveMotor( String motorName, int encoderValue, int speed );
 
 task main()
 {
@@ -32,7 +43,7 @@ task main()
   	Vale Tolpegin
   */
   
-  //while loop ( forever )
+  //while loop ( forever ) or until program terminated
   while ( true )
   {
     //getjoysticksettings()
@@ -70,4 +81,16 @@ task main()
     }
       
   } //end while loop
+}
+
+void moveMotor( String motorName, int encoderValue, int speed )
+{
+  nMotorEncoder[ motorName ] = 0;
+  
+  while ( nMotorEncoder[ motorName ] < encoderValue )
+  {
+    motor[ motorName ] = speed;
+  }
+  
+  motor[ motorName ] = 0;
 }
