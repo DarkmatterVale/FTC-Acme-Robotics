@@ -620,10 +620,12 @@ task main()
   initializeRobot();
   
   //drop ball in goal ( middle high )
-  	//move toward goal
-  	//turn aroung
-  	//grab goal
-  	//drop ball in goal
+  //move toward goal
+  moveRobotBackward( 70, 18720 );	
+  
+  //grab goal
+  
+  //drop ball in goal
   
   //move team goals to scoring area
   while ( SensorValue[ SonarSensor ] > 20 )
@@ -633,4 +635,5 @@ task main()
   }
   
   //stop
+  haltRobot();
 }
