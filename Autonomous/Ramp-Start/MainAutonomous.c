@@ -58,12 +58,42 @@ manipulators and their associated methods and add additional methods to best sui
 
 //GLOBAL VARIABLES
 	//GLOBAL VARIABLES' DECLARATIONS GO HERE
+int matValue =     0;
+int surfaceValue = 0;
+int rampValue =    0;
 	
 /*
 To Do list:
 	- Move manipulator 1 method needs to be overloaded
 
 */
+
+void haltRobot()
+{
+  /*
+  Rev 1.0
+  This function is used to stop the robot
+  
+  Variables Used:
+  	NONE
+  
+  Inputs:
+  	NONE
+  Outputs:
+  	leftRobotMotor ( left drive motor )
+  	rightRobotMotor ( right drive motor )
+  	
+  To Do:
+  	NONE
+  
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  motor[ leftDriveMotor ] = 0;
+  motor[ rightDriveMotor ] = 0;
+  wait1Msec( 100 );
+}
 
 void moveRobotForward( int speed )
 {
@@ -161,7 +191,7 @@ void moveRobotBackward( int speed )
   Author(s):
   	Vale Tolpegin
   */	
-  	
+  
   	
   motor[leftRobotMotor] = 0; //reset motors
   motor[rightRobotMotor] = 0;
@@ -387,7 +417,7 @@ void findThreshHold()
 	nxtDisplayCenteredTextLine( 3, " light value: %d", SensorValue[ lightSensor ] );
   }
 
-  VARIABLE USED = SensorValue[ lightSensor ];
+  rampValue = SensorValue[ lightSensor ];
   
   //Get surface value
   nxtDisplayCenteredTextLine( 0, "Place light sensor over " );
@@ -399,7 +429,7 @@ void findThreshHold()
 	nxtDisplayCenteredTextLine( 3, "light value: %d", SensorValue[ lightSensor ] );
   }
 
-  VARIABLE USED = SensorValue[ lightSensor ];
+  surfaceValue = SensorValue[ lightSensor ];
   
   //Get grey mat value
   nxtDisplayCenteredTextLine( 0, "Place light sensor over " );
@@ -411,7 +441,7 @@ void findThreshHold()
 	nxtDisplayCenteredTextLine( 3, "light value: %d", SensorValue[ lightSensor ] );
   }
 
-  VARIABLE USED = SensorValue[ lightSensor ];
+  matValue = SensorValue[ lightSensor ];
 }
 
 void smuxInitialization()
@@ -422,7 +452,7 @@ void smuxInitialization()
 void initializeRobot()
 {
   /*
-  Rev 1.1
+  Rev 1.4
   In here, we should test all of the motors/moving parts of the robot by testing them for a couple of seconds, and then resetting the parts
 
   Inputs:
@@ -430,9 +460,9 @@ void initializeRobot()
   	sensors
   Outputs:
   	servos
+  	motors
   
   To Do:
-  	Remove code related to motors
   	Continue to develop until working prototype
   
   Author(s):
@@ -441,25 +471,21 @@ void initializeRobot()
   
   
   //Find/Set threshhold for light sensor by calling findThreshHold()
+  findThreshHold();
   
   //initialize SMUXs
-  	//smuxInitialization();
+  smuxInitialization();
   
   //Test main motors
-    //Left movement motor and thus the left tread
+    //Left movement motor and the left tread
     	//motor[leftMotor] = 70;
-    //right movement motor and thus the right tread
+    //right movement motor and the right tread
       //motor[rightMotor] = 70;
+  motor[ leftDriveMotor ] = 10;
+  motor[ rightDriveMotor ] = 10;
+  wait1Msec( 1000 );
   
-  //Test sensors, provide feedback on a small LED matrix, green for in the clear, red for not in the clear
-    //feedback from the distance sensor ( SensorValue[distanceSensor] != 0 )
-    //feedback from the 2nd distance sensor ( SensorValue[distanceSensor2] != 0 )
-    //feedback from the light sensor ( SensorValue[lightSensor] != 0 )
-    //feedback from the 2nd light sensor ( SensorValue[lightSensor2] != 0 )
-    //feedback from the gyroscope ( SensorValue[gyroscopeSensor] != 0 )
-    //feedback from the IR Sensor ( SensorValue[IRSensor] != 0 )
-    //feedback from the 2nd IR Sensor ( SensorValue[IRSensor2] != 0 )
-    //feedback from the Compass ( SensorValue[compassSensor] != 0 )
+  haltRobot();
   
   //Test lift
     //Bring lift up
@@ -591,14 +617,20 @@ task main()
   */
   
   //Call InitializeRobot method
+  initializeRobot();
   
   //drop ball in goal ( middle high )
   	//move toward goal
   	//turn aroung
   	//grab goal
-  	//
+  	//drop ball in goal
   
   //move team goals to scoring area
+  while ( SensorValue[ SonarSensor ] > 20 )
+  {
+  	motor[ leftDriveMotor ] = 70;
+  	motor[ rightDriveMotor ] = 70;
+  }
   
   //stop
 }
