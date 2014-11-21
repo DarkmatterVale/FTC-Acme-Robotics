@@ -2,8 +2,8 @@
 
 /*
 
-  Joystick 1 will move the robot's drive motors
-  Joystick 2 will move the robot's lift
+  Joystick 1 will move the robot's drive motors -> Aiden will be the driver
+  Joystick 2 will move the robot's lift -> Vale will drive the lift and manipulators
 
 */
 
@@ -11,6 +11,27 @@
 
 task main()
 {
+  /*
+  Rev 1.0
+  This is the main task that will allow the robot to be driven and controlled during teleop
+  
+  Variables Used:
+  	NONE
+  
+  Inputs:
+  	Joysticks
+  Outputs:
+  	Drive motors ( leftDriveMotor and rightDriveMotor )
+  	Lift motor
+  	Goal holder
+  	
+  To Do:
+  	-Add code for 2nd joystick
+  	
+  Author(s):
+  	Vale Tolpegin
+  */
+  
   //while loop ( forever )
   while ( true )
   {
@@ -27,13 +48,13 @@ task main()
     //if joystick button ( button that will use tower lift to go up) is pressed
     if ( )
     {
-      //move tower lift up
+      //move tower lift up to the next position
     }
     
     //if joystick button ( button that will use tower lift to go down) is pressed
     else if ( )
     {
-      //move tower lift down
+      //move tower lift down to the next position
     }
       
     //if button ( button to lock rolling goal to robot ) is pressed
