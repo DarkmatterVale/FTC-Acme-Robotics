@@ -237,12 +237,12 @@ void moveRobotBackward( int speed, int encoderValue )
   
   while ( nMotorEncoder[ leftDriveMotor ] <= encoderValue && nMotorEncoder[ rightDriveMotor ] <= encoderValue ) //while encoders havent gone pase what is allowed
   {
-    motor[leftRobotMotor] = -speed; //go backward
-    motor[rightRobotMotor] = -speed;
+    motor[ leftDriveMotor ]  = -speed; //go backward
+    motor[ rightDriveMotor ] = -speed;
   }
   
-  motor[leftRobotMotor] = 0; //stop motors
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stop motors
+  motor[ rightDriveMotor ] = 0;
 }
 
 void moveRobotLeft( int speed )
@@ -265,12 +265,12 @@ void moveRobotLeft( int speed )
   */	
   	
   	
-  motor[leftRobotMotor] = 0; //stopping motors to eliminate course deviations
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stopping motors to eliminate course deviations
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  motor[leftRobotMotor] = -speed; //setting motors to speed variable. Since I want to turn left, making the left motor the negative of the value for the second motor
-  motor[rightRobotMotor] = speed;
+  motor[ leftDriveMotor ]  = -speed; //setting motors to speed variable. Since I want to turn left, making the left motor the negative of the value for the second motor
+  motor[rightDriveMotor ] = speed;
 }
 
 void moveRobotLeft( int speed, int encoderValue )
@@ -296,21 +296,21 @@ void moveRobotLeft( int speed, int encoderValue )
   */
   
   
-  motor[leftRobotMotor] = 0; //stopping motors to prevent course deviations
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stopping motors to prevent course deviations
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  nMotorEncoder[leftRobotMotor] = 0; //resetting encoder values
-  nMotorEncoder[rightRobotMotor] = 0;
+  nMotorEncoder[ leftDriveMotor ]  = 0; //resetting encoder values
+  nMotorEncoder[ rightDriveMotor ] = 0;
   
-  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //while encoders have not moved past allowed distance
+  while ( nMotorEncoder[ leftDriveMotor ] <= encoderValue && nMotorEncoder[ rightDriveMotor ] <= encoderValue ) //while encoders have not moved past allowed distance
   {
-    motor[leftRobotMotor] = -speed; //setting motors to passed speed variable power level
-    motor[rightRobotMotor] = speed;
+    motor[ leftDriveMotor ]  = -speed; //setting motors to passed speed variable power level
+    motor[ rightDriveMotor ] = speed;
   }
   
-  motor[leftRobotMotor] = 0; //stopping motors after the robots have moved for the set amount of time
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stopping motors after the robots have moved for the set amount of time
+  motor[ rightDriveMotor ] = 0;
 }
 
 void moveRobotRight( int speed )
@@ -333,12 +333,12 @@ void moveRobotRight( int speed )
   */
   
   
-  motor[leftRobotMotor] = 0; //reset motors
-  motor[rightRobotMotor] = 0;
+  motor[leftDriveMotor] = 0; //reset motors
+  motor[rightDriveMotor] = 0;
   wait1Msec( 50 );
   
-  motor[leftRobotMotor] = speed; //turn right
-  motor[rightRobotMotor] = -speed;
+  motor[ leftDriveMotor ]  = speed; //turn right
+  motor[ rightDriveMotor ] = -speed;
 }
 
 void moveRobotRight( int speed, int encoderValue )
@@ -365,21 +365,21 @@ void moveRobotRight( int speed, int encoderValue )
   */
   
   
-  motor[leftRobotMotor] = 0; //resetting motors
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor]   = 0; //resetting motors
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  nMotorEncoder[leftRobotMove] = 0; //resetting robot motor encoders
-  nMotorEncoder[rightRobotMove] = 0;
+  nMotorEncoder[ leftDriveMotor ]  = 0; //resetting robot motor encoders
+  nMotorEncoder[ rightDriveMotor ] = 0;
   
-  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //move while encoder ticks is less than the wanted amount
+  while ( nMotorEncoder[ leftDriveMotor ] <= encoderValue && nMotorEncoder[ rightDriveMotor ] <= encoderValue ) //move while encoder ticks is less than the wanted amount
   {
-    motor[leftRobotMotor] = speed; //turn right
-    motor[rightRobotMotor] = -speed;
+    motor[ leftDriveMotor ]  = speed; //turn right
+    motor[ rightDriveMotor ] = -speed;
   }
   
-  motor[leftRobotMotor] = 0; //once done, stop motors
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //once done, stop motors
+  motor[ rightDriveMotor ] = 0;
 }
 
 void findThreshHold()
@@ -481,7 +481,7 @@ void initializeRobot()
     	//motor[leftMotor] = 70;
     //right movement motor and the right tread
       //motor[rightMotor] = 70;
-  motor[ leftDriveMotor ] = 10;
+  motor[ leftDriveMotor ]  = 10;
   motor[ rightDriveMotor ] = 10;
   wait1Msec( 1000 );
   
@@ -630,7 +630,7 @@ task main()
   //move team goals to scoring area
   while ( SensorValue[ SonarSensor ] > 20 )
   {
-  	motor[ leftDriveMotor ] = 70;
+  	motor[ leftDriveMotor ]  = 70;
   	motor[ rightDriveMotor ] = 70;
   }
   
