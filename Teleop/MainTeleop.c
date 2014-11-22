@@ -110,12 +110,14 @@ task main()
     if ( joy2Btn( 1 ) == 1 )
     {
       //lock goal to robot
+      servo[ servo1 ] = 0;
     }
       
     //else if button ( button to release goal ) is pressed
     else if ( joy2Btn( 3 ) == 1 )
     {
       //release goal
+      servo[ servo1 ] = 130;
     }
       
   } //end while loop
