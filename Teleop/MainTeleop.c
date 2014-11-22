@@ -61,7 +61,7 @@ task main()
     getJoystickSettings( joystick );
     
     //if joystick button ( button that will use tower lift to go up) is pressed
-    if ( )
+    if ( joy2Btn( 3 ) == 1 )
     {
       //move tower lift up to the next position
       switch ( liftPosition )
@@ -84,7 +84,7 @@ task main()
     }
     
     //if joystick button ( button that will use tower lift to go down) is pressed
-    else if ( )
+    else if ( joy2Btn( 0 ) == 1 )
     {
       //move tower lift down to the next position
       switch ( liftPosition )
@@ -106,14 +106,14 @@ task main()
       }
     }
       
-    //if button ( button to lock rolling goal to robot ) is pressed
-    if ( )
+    //if button to lock rolling goal to robot is pressed
+    if ( joy2Btn( 1 ) == 1 )
     {
       //lock goal to robot
     }
       
     //else if button ( button to release goal ) is pressed
-    else if ( )
+    else if ( joy2Btn( 3 ) == 1 )
     {
       //release goal
     }
