@@ -90,7 +90,7 @@ void haltRobot()
   	Vale Tolpegin
   */
   
-  motor[ leftDriveMotor ] = 0;
+  motor[ leftDriveMotor ]  = 0;
   motor[ rightDriveMotor ] = 0;
   wait1Msec( 100 );
 }
@@ -118,12 +118,12 @@ void moveRobotForward( int speed )
   */
   	
   	
-  motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stopping motors to eliminate any possible course deviations
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  motor[leftRobotMotor] = speed; //setting the motors to the passed speed variable level power level ( in percent of highest possible speed )
-  motor[rightRobotMotor] = speed;
+  motor[ leftDriveMotor ]  = speed; //setting the motors to the passed speed variable level power level ( in percent of highest possible speed )
+  motor[ rightDriveMotor ] = speed;
 }
 
 void moveRobotForward( int speed, int encoderValue )
@@ -153,21 +153,21 @@ void moveRobotForward( int speed, int encoderValue )
   */
   	
   	
-  motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stopping motors to eliminate any possible course deviations
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  nMotorEncoder[leftRobotMotor] = 0; //resetting encoder values
-  nMotorEncoder[rightRobotMotor] = 0;
+  nMotorEncoder[ leftDriveMotor ]  = 0; //resetting encoder values
+  nMotorEncoder[ rightDriveMotor ] = 0;
   
-  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //while encoders have not moved past allowed distance
+  while ( nMotorEncoder[ leftDriveMotor ] <= encoderValue && nMotorEncoder[ rightDriveMotor ] <= encoderValue ) //while encoders have not moved past allowed distance
   {
-    motor[leftRobotMotor] = speed; //setting motors to passed speed variable power level
-    motor[rightRobotMotor] = speed;
+    motor[ leftDriveMotor ]  = speed; //setting motors to passed speed variable power level
+    motor[ rightDriveMotor ] = speed;
   }
   
-  motor[leftRobotMotor] = 0; //stopping motors after movement duration has occurred
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stopping motors after movement duration has occurred
+  motor[ rightDriveMotor ] = 0;
 }
 
 void moveRobotBackward( int speed )
@@ -193,12 +193,12 @@ void moveRobotBackward( int speed )
   */	
   
   	
-  motor[leftRobotMotor] = 0; //reset motors
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //reset motors
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  motor[leftRobotMotor] = -speed; //go backward
-  motor[rightRobotMotor] = -speed;
+  motor[ leftDriveMotor ]  = -speed; //go backward
+  motor[ rightDriveMotor ] = -speed;
 }
 
 void moveRobotBackward( int speed, int encoderValue )
@@ -228,14 +228,14 @@ void moveRobotBackward( int speed, int encoderValue )
   */
   	
   	
-  motor[leftRobotMotor] = 0; //reset motors
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //reset motors
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  nMotorEncoder[leftRobotMotor] = 0; //reset motor encoders
-  nMotorEncoder[rightRobotMotor] = 0;
+  nMotorEncoder[ leftDriveMotor ]  = 0; //reset motor encoders
+  nMotorEncoder[ rightDriveMotor ] = 0;
   
-  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //while encoders havent gone pase what is allowed
+  while ( nMotorEncoder[ leftDriveMotor ] <= encoderValue && nMotorEncoder[ rightDriveMotor ] <= encoderValue ) //while encoders havent gone pase what is allowed
   {
     motor[leftRobotMotor] = -speed; //go backward
     motor[rightRobotMotor] = -speed;
