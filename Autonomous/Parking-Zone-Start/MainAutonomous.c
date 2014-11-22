@@ -1,16 +1,105 @@
-void HTSMUXrun( tSensors smux )
+#pragma config(Hubs,  S1, HTMotor,  HTMotor,  HTServo,  none)
+#pragma config(Sensor, S1,     lightSensor,    sensorNone)
+#pragma config(Sensor, S2,     SonarSensor,    sensorNone)
+#pragma config(Motor,  mtr_S1_C1_1,     leftDriveMotor, tmotorTetrix, openLoop, reversed)
+#pragma config(Motor,  mtr_S1_C1_2,     rightDriveMotor, tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C2_1,     motorF,        tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C2_2,     motorG,        tmotorTetrix, openLoop)
+#pragma config(Servo,  srvo_S1_C3_1,    servo1,               tServoStandard)
+#pragma config(Servo,  srvo_S1_C3_2,    servo2,               tServoNone)
+#pragma config(Servo,  srvo_S1_C3_3,    servo3,               tServoNone)
+#pragma config(Servo,  srvo_S1_C3_4,    servo4,               tServoNone)
+#pragma config(Servo,  srvo_S1_C3_5,    servo5,               tServoNone)
+#pragma config(Servo,  srvo_S1_C3_6,    servo6,               tServoNone)r
+	//Sensors:
+  		//lightSensor ( two at the front of the robot )
+  		//lightSensor 2
+  		//IRSensor
+  		//IRSensor 2
+  		//Gyroscope
+  		//DistanceSensor
+  		//DistanceSensor 2
+  		//Compass sensor
+  
+//Defines
+#define FORWARD_STANDARD 60
+#define FORWARD_FULL 100
+
+#define STOP 0
+
+#define BACKWARD_STANDARD 60
+#define BACKWARD_FULL 100
+  
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//                                        Autonomous mode program for FTC Team 7983
+//
+//In this program, our overall goal is to have the robot score as many points as possible, in as little time as possible
+//
+//                                                Goals for Autonomous mode:
+//                                            1. Drive robot from ramp to floor
+//                                          2. Drop kickstand in center ball holder
+//                                3. Load/Shoot autonomous loaded balls into center ball holders
+//                                                4. Grab a goal and hold it
+//                              5. Move to position we would like it to be at at end of autonomous
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+
+Author(s):
+	- Vale Tolpegin
+	
+*/
+
+/*
+
+***VERY IMPORTANT---PLEASE READ***
+
+NOT ALL OF THE FOLLOWING METHODS WILL BE USED. I HAVE INCLUDED THEM ALL JUST TO BE ON THE SAFE SIDE OF WHAT MIGHT BE USEFUL
+
+Additionally, we might only have 1 manipulator, eliminating one set of manipulator methods. We might eliminate both of these
+manipulators and their associated methods and add additional methods to best suite a new manipulator.
+
+*/
+
+//GLOBAL VARIABLES
+	//GLOBAL VARIABLES' DECLARATIONS GO HERE
+int matValue =     0;
+int surfaceValue = 0;
+int rampValue =    0;
+	
+/*
+To Do list:
+	- Move manipulator 1 method needs to be overloaded
+
+*/
+
+void haltRobot()
 {
-  //Creating message to send
-  ubyte sendMsg[4];
+  /*
+  Rev 1.0
+  This function is used to stop the robot
   
-  //Assigning message info
-  sendMsg[0] = 3;
-  sendMsg[1] = 0x10;
-  sendMsg[2] = 0x20;
-  sendMsg[3] = 2;
+  Variables Used:
+  	NONE
   
-  //Send message
-  sendI2CMsg( smux, sendMsg, 0 );
+  Inputs:
+  	NONE
+  Outputs:
+  	leftRobotMotor ( left drive motor )
+  	rightRobotMotor ( right drive motor )
+  	
+  To Do:
+  	NONE
+  
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  motor[ leftDriveMotor ]  = 0;
+  motor[ rightDriveMotor ] = 0;
+  wait1Msec( 100 );
 }
 
 void moveRobotForward( int speed )
@@ -36,12 +125,12 @@ void moveRobotForward( int speed )
   */
   	
   	
-  motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stopping motors to eliminate any possible course deviations
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  motor[leftRobotMotor] = speed; //setting the motors to the passed speed variable level power level ( in percent of highest possible speed )
-  motor[rightRobotMotor] = speed;
+  motor[ leftDriveMotor ]  = speed; //setting the motors to the passed speed variable level power level ( in percent of highest possible speed )
+  motor[ rightDriveMotor ] = speed;
 }
 
 void moveRobotForward( int speed, int encoderValue )
@@ -71,21 +160,21 @@ void moveRobotForward( int speed, int encoderValue )
   */
   	
   	
-  motor[leftRobotMotor] = 0; //stopping motors to eliminate any possible course deviations
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stopping motors to eliminate any possible course deviations
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  nMotorEncoder[leftRobotMotor] = 0; //resetting encoder values
-  nMotorEncoder[rightRobotMotor] = 0;
+  nMotorEncoder[ leftDriveMotor ]  = 0; //resetting encoder values
+  nMotorEncoder[ rightDriveMotor ] = 0;
   
-  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //while encoders have not moved past allowed distance
+  while ( nMotorEncoder[ leftDriveMotor ] <= encoderValue && nMotorEncoder[ rightDriveMotor ] <= encoderValue ) //while encoders have not moved past allowed distance
   {
-    motor[leftRobotMotor] = speed; //setting motors to passed speed variable power level
-    motor[rightRobotMotor] = speed;
+    motor[ leftDriveMotor ]  = speed; //setting motors to passed speed variable power level
+    motor[ rightDriveMotor ] = speed;
   }
   
-  motor[leftRobotMotor] = 0; //stopping motors after movement duration has occurred
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stopping motors after movement duration has occurred
+  motor[ rightDriveMotor ] = 0;
 }
 
 void moveRobotBackward( int speed )
@@ -109,14 +198,14 @@ void moveRobotBackward( int speed )
   Author(s):
   	Vale Tolpegin
   */	
+  
   	
-  	
-  motor[leftRobotMotor] = 0; //reset motors
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //reset motors
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  motor[leftRobotMotor] = -speed; //go backward
-  motor[rightRobotMotor] = -speed;
+  motor[ leftDriveMotor ]  = -speed; //go backward
+  motor[ rightDriveMotor ] = -speed;
 }
 
 void moveRobotBackward( int speed, int encoderValue )
@@ -146,21 +235,21 @@ void moveRobotBackward( int speed, int encoderValue )
   */
   	
   	
-  motor[leftRobotMotor] = 0; //reset motors
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //reset motors
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  nMotorEncoder[leftRobotMotor] = 0; //reset motor encoders
-  nMotorEncoder[rightRobotMotor] = 0;
+  nMotorEncoder[ leftDriveMotor ]  = 0; //reset motor encoders
+  nMotorEncoder[ rightDriveMotor ] = 0;
   
-  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //while encoders havent gone pase what is allowed
+  while ( nMotorEncoder[ leftDriveMotor ] <= encoderValue && nMotorEncoder[ rightDriveMotor ] <= encoderValue ) //while encoders havent gone pase what is allowed
   {
-    motor[leftRobotMotor] = -speed; //go backward
-    motor[rightRobotMotor] = -speed;
+    motor[ leftDriveMotor ]  = -speed; //go backward
+    motor[ rightDriveMotor ] = -speed;
   }
   
-  motor[leftRobotMotor] = 0; //stop motors
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stop motors
+  motor[ rightDriveMotor ] = 0;
 }
 
 void moveRobotLeft( int speed )
@@ -183,12 +272,12 @@ void moveRobotLeft( int speed )
   */	
   	
   	
-  motor[leftRobotMotor] = 0; //stopping motors to eliminate course deviations
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stopping motors to eliminate course deviations
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  motor[leftRobotMotor] = -speed; //setting motors to speed variable. Since I want to turn left, making the left motor the negative of the value for the second motor
-  motor[rightRobotMotor] = speed;
+  motor[ leftDriveMotor ]  = -speed; //setting motors to speed variable. Since I want to turn left, making the left motor the negative of the value for the second motor
+  motor[rightDriveMotor ] = speed;
 }
 
 void moveRobotLeft( int speed, int encoderValue )
@@ -214,21 +303,21 @@ void moveRobotLeft( int speed, int encoderValue )
   */
   
   
-  motor[leftRobotMotor] = 0; //stopping motors to prevent course deviations
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stopping motors to prevent course deviations
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  nMotorEncoder[leftRobotMotor] = 0; //resetting encoder values
-  nMotorEncoder[rightRobotMotor] = 0;
+  nMotorEncoder[ leftDriveMotor ]  = 0; //resetting encoder values
+  nMotorEncoder[ rightDriveMotor ] = 0;
   
-  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //while encoders have not moved past allowed distance
+  while ( nMotorEncoder[ leftDriveMotor ] <= encoderValue && nMotorEncoder[ rightDriveMotor ] <= encoderValue ) //while encoders have not moved past allowed distance
   {
-    motor[leftRobotMotor] = -speed; //setting motors to passed speed variable power level
-    motor[rightRobotMotor] = speed;
+    motor[ leftDriveMotor ]  = -speed; //setting motors to passed speed variable power level
+    motor[ rightDriveMotor ] = speed;
   }
   
-  motor[leftRobotMotor] = 0; //stopping motors after the robots have moved for the set amount of time
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor ]  = 0; //stopping motors after the robots have moved for the set amount of time
+  motor[ rightDriveMotor ] = 0;
 }
 
 void moveRobotRight( int speed )
@@ -251,12 +340,12 @@ void moveRobotRight( int speed )
   */
   
   
-  motor[leftRobotMotor] = 0; //reset motors
-  motor[rightRobotMotor] = 0;
+  motor[leftDriveMotor] = 0; //reset motors
+  motor[rightDriveMotor] = 0;
   wait1Msec( 50 );
   
-  motor[leftRobotMotor] = speed; //turn right
-  motor[rightRobotMotor] = -speed;
+  motor[ leftDriveMotor ]  = speed; //turn right
+  motor[ rightDriveMotor ] = -speed;
 }
 
 void moveRobotRight( int speed, int encoderValue )
@@ -283,54 +372,19 @@ void moveRobotRight( int speed, int encoderValue )
   */
   
   
-  motor[leftRobotMotor] = 0; //resetting motors
-  motor[rightRobotMotor] = 0;
+  motor[ leftDriveMotor]   = 0; //resetting motors
+  motor[ rightDriveMotor ] = 0;
   wait1Msec( 50 );
   
-  nMotorEncoder[leftRobotMove] = 0; //resetting robot motor encoders
-  nMotorEncoder[rightRobotMove] = 0;
+  nMotorEncoder[ leftDriveMotor ]  = 0; //resetting robot motor encoders
+  nMotorEncoder[ rightDriveMotor ] = 0;
   
-  while ( nMotorEncoder[leftRobotMotor] <= encoderValue && nMotorEncoder[rightRobotMotor] <= encoderValue ) //move while encoder ticks is less than the wanted amount
+  while ( nMotorEncoder[ leftDriveMotor ] <= encoderValue && nMotorEncoder[ rightDriveMotor ] <= encoderValue ) //move while encoder ticks is less than the wanted amount
   {
-    motor[leftRobotMotor] = speed; //turn right
-    motor[rightRobotMotor] = -speed;
+    motor[ leftDriveMotor ]  = speed; //turn right
+    motor[ rightDriveMotor ] = -speed;
   }
   
-  motor[leftRobotMotor] = 0; //once done, stop motors
-  motor[rightRobotMotor] = 0;
-}
-
-void seekIrBeacon()
-{
-  /*
-  Rev 1.0
-  Robot will successfully find IR beacon and drop ball in tube
-  
-  Inputs:
-  	IR sensor
-  Outputs:
-  	leftRobotMotor
-  	rightRobotMotor
-  
-  To Do:
-  	Edit/Add to Inputs and Outputs
-  
-  Author(s):
-  	Vale Tolpegin
-  */
-  
-  
-  //find IR beacon
-    //use tetrix IR sensor's grid to move:
-      //if the value is < than 5
-        //turn robot to the right
-      //if the value is > than 5
-        //turn robot to the left
-      //if the value is = to 5
-        //go straight
-  
-  //drop ball into container
-    //call moveManipulator1/2( lift ) with encodervalue
-    //bring manipulator/lift back down
-      //call moveManipulator1/2( lift ) with -encodervalue and -speed level
+  motor[ leftDriveMotor ]  = 0; //once done, stop motors
+  motor[ rightDriveMotor ] = 0;
 }
