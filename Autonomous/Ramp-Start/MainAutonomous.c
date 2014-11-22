@@ -1,9 +1,16 @@
-//Var/Config pragma lines
-	//Motors:
-  		//leftMotor
-  		//rightMotor
-  		//liftMotor
-  		//catapultMotor
+#pragma config(Hubs,  S1, HTMotor,  HTMotor,  HTServo,  none)
+#pragma config(Sensor, S1,     lightSensor,    sensorNone)
+#pragma config(Sensor, S2,     SonarSensor,    sensorNone)
+#pragma config(Motor,  mtr_S1_C1_1,     leftDriveMotor, tmotorTetrix, openLoop, reversed)
+#pragma config(Motor,  mtr_S1_C1_2,     rightDriveMotor, tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C2_1,     motorF,        tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C2_2,     motorG,        tmotorTetrix, openLoop)
+#pragma config(Servo,  srvo_S1_C3_1,    servo1,               tServoStandard)
+#pragma config(Servo,  srvo_S1_C3_2,    servo2,               tServoNone)
+#pragma config(Servo,  srvo_S1_C3_3,    servo3,               tServoNone)
+#pragma config(Servo,  srvo_S1_C3_4,    servo4,               tServoNone)
+#pragma config(Servo,  srvo_S1_C3_5,    servo5,               tServoNone)
+#pragma config(Servo,  srvo_S1_C3_6,    servo6,               tServoNone)r
 	//Sensors:
   		//lightSensor ( two at the front of the robot )
   		//lightSensor 2
