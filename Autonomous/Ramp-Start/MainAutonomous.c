@@ -22,13 +22,23 @@
   		//Compass sensor
   
 //Defines
+//motors
 #define FORWARD_STANDARD 60
 #define FORWARD_FULL 100
-
 #define STOP 0
-
 #define BACKWARD_STANDARD 60
 #define BACKWARD_FULL 100
+
+//lift
+#define LIFT_POSITION_0 0
+#define LIFT_POSITION_1 100
+#define LIFT_POSITION_2 200
+#define LIFT_POSITION_3 300
+#define LIFT_POSITION_4 400
+
+//servo
+#define SERVO_DOWN 180
+#define SERVO_UP 0
 
 //Includes
 #include "drivers/hitechnic-sensormux.h"
@@ -604,6 +614,7 @@ task main()
   servo[ servo1 ] = 0;
   
   //drop ball in goal
+  moveManipulator( 100, 90 );
   
   //turn the robot
   moveRobotRight( 50, 800 );
