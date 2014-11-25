@@ -552,21 +552,36 @@ void moveManipulator( int encoderValue, int speed )
   	liftMotor
   
   To Do:
-  	Add SPEED value
-  	Change method name more appropriate for procedure function
+	NONE
   
   Author(s):
   	Vale Tolpegin
   */
   
   
-  //motor[liftMotor] = SPEED;
+  //reset encoder
+  nMotorEncoder[ liftMotor ] = 0;
   
-  //while ( nMotorEncoder[liftMotor] <= encoderValue )
-  //{
-  //}
+  //start lift motor
+  motor[liftMotor] = speed;
   
-  //motor[liftMotor] = 0;
+  if ( encoderValue > 0 )
+  {
+  	//while lift has not reached wanted position
+  	while ( nMotorEncoder[liftMotor] < encoderValue )
+  	{
+  	}
+  	
+  	motor[ liftMotor ] = STOP;
+  } else if ( encoderValue < 0 )
+  {
+  	//while lift has not reached wanted position
+  	while ( nMotorEncoder[liftMotor] > encoderValue )
+  	{
+  	}
+  	
+  	motor[ liftMotor ] = STOP;
+  }
 }
 
 void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
