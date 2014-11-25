@@ -10,7 +10,10 @@
 #pragma config(Servo,  srvo_S1_C3_3,    servo3,               tServoNone)
 #pragma config(Servo,  srvo_S1_C3_4,    servo4,               tServoNone)
 #pragma config(Servo,  srvo_S1_C3_5,    servo5,               tServoNone)
-#pragma config(Servo,  srvo_S1_C3_6,    servo6,               tServoNone)r
+#pragma config(Servo,  srvo_S1_C3_6,    servo6,               tServoNone)
+
+#pragma config(Sensor, S2,     HTSMUX,              sensorLowSpeed)
+#pragma config(Sensor, S3,     HTSMUX,              sensorLowSpeed)
 	//Sensors:
   		//lightSensor ( two at the front of the robot )
   		//lightSensor 2
