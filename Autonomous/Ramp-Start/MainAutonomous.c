@@ -393,7 +393,7 @@ void findThreshHold()
   	Variables' values
   
   To Do:
-  	Figure out variable scheme ( what variables that are set here need to be global, what variables do we need, etc )
+  	NONE
   
   Author(s):
   	Vale Tolpegin
@@ -441,11 +441,6 @@ void findThreshHold()
   matValue = SensorValue[ lightSensor ];
 }
 
-void smuxInitialization()
-{
-	//Initialize Robot
-}
-
 void initializeRobot()
 {
   /*
@@ -460,7 +455,7 @@ void initializeRobot()
   	motors
   
   To Do:
-  	Continue to develop until working prototype
+  	NONE
   
   Author(s):
   	Vale Tolpegin
@@ -470,14 +465,7 @@ void initializeRobot()
   //Find/Set threshhold for light sensor by calling findThreshHold()
   findThreshHold();
   
-  //initialize SMUXs
-  smuxInitialization();
-  
   //Test main motors
-    //Left movement motor and the left tread
-    	//motor[leftMotor] = 70;
-    //right movement motor and the right tread
-      //motor[rightMotor] = 70;
   motor[ leftDriveMotor ]  = 10;
   motor[ rightDriveMotor ] = 10;
   wait1Msec( 1000 );
@@ -485,22 +473,15 @@ void initializeRobot()
   haltRobot();
   
   //Test lift
-    //Bring lift up
-      //motor[liftMotor] = 70;
-      //for a certain amount of time:
-        //wait1Msec( HEIGHT WANTED )
-        //motor[liftMotor] = 0;
-        //
-        //while ( nMotorEncoder[liftMotor] <= HEIGHT WANTED )
-        //{
-        //}
-        //motor[liftMotor] = 0;
-        
-    //Move ball container around
-      //move servo a full rotation
+  motor[ liftMotor ] = 70;
+  wait1Msec( 2000 );
   
-  //Test rolling goal holder
-    //drop post
+  haltRobot();
+        
+  //Move ball container around
+  servo[ servo1 ] = 180;
+  wait1Msec( 1000 );
+  servo[ servo1 ] = 0;
 }
 
 void moveManipulator( int encoderValue )
