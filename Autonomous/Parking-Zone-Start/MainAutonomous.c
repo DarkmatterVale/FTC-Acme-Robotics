@@ -636,27 +636,23 @@ task main()
   	Vale Tolpegin
   */
   
+  
+  //start new task
+  
   //Call InitializeRobot method
   initializeRobot();
   
-  //move toward goal(s)
-  moveRobotBackward( 70, 18720 );	
-  
-  //grab goal
-  servo[ servo1 ] = 0;
+  //find IR beacon
+  findIrBeacon();
   
   //drop ball in goal
-  moveManipulator( 100, 90 );
+  dropBallInGoal();
   
-  //turn the robot
+  //drop ball in goal
+  moveManipulator( 400, 90 );
+  
+  //turn the robot and go right in front of the pole
   moveRobotRight( 50, 800 );
-  
-  //move team goals to scoring area
-  while ( SensorValue[ SonarSensor ] > 20 )
-  {
-  	motor[ leftDriveMotor ]  = 70;
-  	motor[ rightDriveMotor ] = 70;
-  }
   
   //stop
   haltRobot();
