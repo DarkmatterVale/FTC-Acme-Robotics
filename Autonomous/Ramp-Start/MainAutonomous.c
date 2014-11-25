@@ -23,10 +23,10 @@
   
 //Defines
 //motors
-#define FORWARD_STANDARD 60
+#define FORWARD_STANDARD 70
 #define FORWARD_FULL 100
 #define STOP 0
-#define BACKWARD_STANDARD 60
+#define BACKWARD_STANDARD 70
 #define BACKWARD_FULL 100
 
 //lift
@@ -507,21 +507,35 @@ void moveManipulator( int encoderValue )
   	liftMotor
   
   To Do:
-  	Add SPEED value
-  	Change method name more appropriate for procedure function
+  	NONE
   
   Author(s):
   	Vale Tolpegin
   */
   
+  //reset encoder
+  nMotorEncoder[ liftMotor ] = 0;
   
-  //motor[liftMotor] = SPEED;
+  //start lift motor
+  motor[liftMotor] = FORWARD_STANDARD;
   
-  //while ( nMotorEncoder[liftMotor] <= encoderValue )
-  //{
-  //}
-  
-  //motor[liftMotor] = 0;
+  if ( encoderValue > 0 )
+  {
+  	//while lift has not reached wanted position
+  	while ( nMotorEncoder[liftMotor] < encoderValue )
+  	{
+  	}
+  	
+  	motor[ liftMotor ] = STOP;
+  } else if ( encoderValue < 0 )
+  {
+  	//while lift has not reached wanted position
+  	while ( nMotorEncoder[liftMotor] > encoderValue )
+  	{
+  	}
+  	
+  	motor[ liftMotor ] = STOP;
+  }
 }
 
 void moveManipulator( int encoderValue, int speed )
