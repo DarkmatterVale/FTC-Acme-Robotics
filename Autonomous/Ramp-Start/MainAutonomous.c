@@ -29,6 +29,14 @@
 
 #define BACKWARD_STANDARD 60
 #define BACKWARD_FULL 100
+
+//Includes
+#include "drivers/hitechnic-sensormux.h"
+#include "drivers/hitechnic-colour-v2.h"
+#include "drivers/hitechnic-compass.h"
+#include "drivers/hitechnic-gyro.h"
+#include "drivers/hitechnic-irseeker-v2.h"
+#include "drivers/lego-ultrasound.h"
   
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
