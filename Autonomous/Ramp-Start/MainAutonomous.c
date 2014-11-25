@@ -52,28 +52,10 @@ Author(s):
 	
 */
 
-/*
-
-***VERY IMPORTANT---PLEASE READ***
-
-NOT ALL OF THE FOLLOWING METHODS WILL BE USED. I HAVE INCLUDED THEM ALL JUST TO BE ON THE SAFE SIDE OF WHAT MIGHT BE USEFUL
-
-Additionally, we might only have 1 manipulator, eliminating one set of manipulator methods. We might eliminate both of these
-manipulators and their associated methods and add additional methods to best suite a new manipulator.
-
-*/
-
-//GLOBAL VARIABLES
-	//GLOBAL VARIABLES' DECLARATIONS GO HERE
+//Global variables' declarations
 int matValue =     0;
 int surfaceValue = 0;
 int rampValue =    0;
-	
-/*
-To Do list:
-	- Move manipulator 1 method needs to be overloaded
-
-*/
 
 void haltRobot()
 {
