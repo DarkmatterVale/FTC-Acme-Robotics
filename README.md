@@ -5,7 +5,7 @@ Please read the Program Structure file! This will give you the structure for eac
 
 Current Version
 ----------------
-v0.3 ( NOT A WORKING VERSION )
+v0.4 ( NOT A WORKING VERSION )
 
 Due Date
 ----------------
