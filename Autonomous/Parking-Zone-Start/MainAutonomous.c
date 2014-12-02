@@ -587,7 +587,25 @@ void moveManipulator( int encoderValue, int speed )
 
 void findIRBeacon()
 {
-	//Add IR beacon finding code here
+	//if goal right in front of you
+	if ( SensorValue[ leftIRSeeker ] == 5 && SensorValue[ rightIRSeeker ] == 5 )
+	{
+		//go forward until right in front of goal
+		moveRobotForward( 70 );
+		
+		while ( !(SensorValue[ leftIRSeeker ] == 4) && !(SensorValue[ rightIRSeeker ] == 4) )
+		{
+		}
+		
+		haltRobot();
+		
+		//lift manipulator
+		
+		//drop ball in center goal
+	} else
+	{
+		//Add code here
+	}
 }
 
 void knockOverCenterStick()
