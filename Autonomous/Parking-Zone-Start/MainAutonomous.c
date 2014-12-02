@@ -610,7 +610,17 @@ void findIRBeacon()
 
 void knockOverCenterStick()
 {
-	//Add knock over code here
+	//back robot up
+	
+	//turn right
+	
+	//go forward
+	
+	//turn left
+	
+	//go forward
+	
+	//
 }
 
 task main()
@@ -632,8 +642,8 @@ task main()
   //findIRBeacon
   findIRBeacon();
   
-  //knockOverStick
-  knockOverCenterStick();
+  //knock over center stick
+  //start task
   
   //stop
   haltRobot();
