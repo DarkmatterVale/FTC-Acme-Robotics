@@ -585,6 +585,16 @@ void moveManipulator( int encoderValue, int speed )
   }
 }
 
+void findIRBeacon()
+{
+	//Add IR beacon finding code here
+}
+
+void knockOverCenterStick()
+{
+	//Add knock over code here
+}
+
 task main()
 {
   /*
@@ -600,6 +610,12 @@ task main()
   
   //Call InitializeRobot method
   initializeRobot();
+  
+  //findIRBeacon
+  findIRBeacon();
+  
+  //knockOverStick
+  knockOverCenterStick();
   
   //stop
   haltRobot();
