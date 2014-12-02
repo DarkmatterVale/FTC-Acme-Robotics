@@ -607,6 +607,12 @@ void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
   	Vale Tolpegin
   */
   
+  while ( SensorValue[ SonarSensor ] > 20 )
+  {
+  	motor[ leftDriveMotor ]  = 70;
+  	motor[ rightDriveMotor ] = 70;
+  }
+  
   //for ( int i = 0; i < 3; i++ )
   //{
     //find goals
@@ -652,11 +658,7 @@ task main()
   moveRobotRight( 50, 800 );
   
   //move team goals to scoring area
-  while ( SensorValue[ SonarSensor ] > 20 )
-  {
-  	motor[ leftDriveMotor ]  = 70;
-  	motor[ rightDriveMotor ] = 70;
-  }
+  dragGoalsIntoScoringZone();
   
   //stop
   haltRobot();
