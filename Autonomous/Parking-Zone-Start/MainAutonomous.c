@@ -585,42 +585,6 @@ void moveManipulator( int encoderValue, int speed )
   }
 }
 
-void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
-{
-  /*
-  Rev 1.0
-  In here, we will need to have the robot push the ball holders/rollers into the box
-  
-  Inputs:
-  	IR sensor
-  	Compass sensor
-  Outputs:
-  	functions invoked
-  
-  To Do:
-  	Change method name more appropriate for procedure function
-  	Edit and be more detailed in Inputs and Outputs area
-  
-  Author(s):
-  	Vale Tolpegin
-  */
-  
-  //for ( int i = 0; i < 3; i++ )
-  //{
-    //find goals
-      //find current position
-        //find IR beacon
-      //move towards goal
-      //turn around
-  
-    //grab goal
-      //drop post
-  
-    //drag to scoring zone
-      //move towards scoring zone
-  //}
-}
-
 task main()
 {
   /*
@@ -636,25 +600,6 @@ task main()
   
   //Call InitializeRobot method
   initializeRobot();
-  
-  //move toward goal(s)
-  moveRobotBackward( 70, 18720 );	
-  
-  //grab goal
-  servo[ servo1 ] = 0;
-  
-  //drop ball in goal
-  moveManipulator( 100, 90 );
-  
-  //turn the robot
-  moveRobotRight( 50, 800 );
-  
-  //move team goals to scoring area
-  while ( SensorValue[ SonarSensor ] > 20 )
-  {
-  	motor[ leftDriveMotor ]  = 70;
-  	motor[ rightDriveMotor ] = 70;
-  }
   
   //stop
   haltRobot();
