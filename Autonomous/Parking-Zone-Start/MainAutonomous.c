@@ -67,7 +67,6 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
-
 Author(s):
 	- Vale Tolpegin
 	
@@ -459,7 +458,6 @@ void initializeRobot()
   /*
   Rev 1.4
   In here, we should test all of the motors/moving parts of the robot by testing them for a couple of seconds, and then resetting the parts
-
   Inputs:
   	servos
   	sensors
@@ -636,23 +634,27 @@ task main()
   	Vale Tolpegin
   */
   
-  
-  //start new task
-  
   //Call InitializeRobot method
   initializeRobot();
   
-  //find IR beacon
-  findIrBeacon();
+  //move toward goal(s)
+  moveRobotBackward( 70, 18720 );	
+  
+  //grab goal
+  servo[ servo1 ] = 0;
   
   //drop ball in goal
-  dropBallInGoal();
+  moveManipulator( 100, 90 );
   
-  //drop ball in goal
-  moveManipulator( 400, 90 );
-  
-  //turn the robot and go right in front of the pole
+  //turn the robot
   moveRobotRight( 50, 800 );
+  
+  //move team goals to scoring area
+  while ( SensorValue[ SonarSensor ] > 20 )
+  {
+  	motor[ leftDriveMotor ]  = 70;
+  	motor[ rightDriveMotor ] = 70;
+  }
   
   //stop
   haltRobot();
