@@ -608,7 +608,7 @@ void findIRBeacon()
 	}
 }
 
-void knockOverCenterStick()
+task knockOverCenterStick()
 {
 	//back robot up
 	
@@ -618,9 +618,7 @@ void knockOverCenterStick()
 	
 	//turn left
 	
-	//go forward
-	
-	//
+	//when time go forward
 }
 
 task main()
@@ -636,14 +634,17 @@ task main()
   	Vale Tolpegin
   */
   
+  //Reset timer
+  timer[ T1 ] = 0;
+  
   //Call InitializeRobot method
   initializeRobot();
   
   //findIRBeacon
   findIRBeacon();
   
-  //knock over center stick
-  //start task
+  //Knock over center stick
+  StartTask( knockOverCenterStick );
   
   //stop
   haltRobot();
