@@ -618,7 +618,21 @@ task knockOverCenterStick()
 	
 	//turn left
 	
+	//go forward
+	moveRobotForward( 70, 1000 );
+	
 	//when time go forward
+	while ( true )
+	{
+		if ( timer[ T1 ] > 25 )
+		{
+			//go forward and knock the stick over
+			moveRobotForward( 70, 3000 );
+			
+			//stop the task
+			StopTask( knockOverCenterStick );
+		}
+	}
 }
 
 task main()
