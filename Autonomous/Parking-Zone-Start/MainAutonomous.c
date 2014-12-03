@@ -611,12 +611,16 @@ void findIRBeacon()
 task knockOverCenterStick()
 {
 	//back robot up
+	moveRobotBackward( 70, 1440 );
 	
 	//turn right
+	moveRobotRight( 70, 720 );
 	
 	//go forward
+	moveRobotForward( 70, 720 );
 	
 	//turn left
+	moveRobotLeft( 70, 720 );
 	
 	//go forward
 	moveRobotForward( 70, 1000 );
