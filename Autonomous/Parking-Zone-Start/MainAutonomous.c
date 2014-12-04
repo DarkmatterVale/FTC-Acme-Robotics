@@ -627,11 +627,17 @@ void findIRBeacon()
 		haltRobot();
 		
 		//lift manipulator
+		moveManipulator( 1440, 70 );
 		
 		//drop ball in center goal
+		switchBallContainerState();
 	} else
 	{
-		//Add code here
+		//turn left
+		moveRobotLeft( 1440, 70 );
+		
+		//go forward until find the correct spot of center goal
+		forward( 70 );
 	}
 }
 
