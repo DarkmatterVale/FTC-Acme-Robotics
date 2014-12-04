@@ -587,6 +587,33 @@ void moveManipulator( int encoderValue, int speed )
   }
 }
 
+void switchContainerState()
+{
+  /*
+  Rev 1.0
+  In here, we will need to have the robot push the ball holders/rollers into the box
+  
+  Inputs:
+  	NONE
+  Outputs:
+  	liftServo
+  
+  To Do:
+  	NONE
+  
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  if ( servo[ liftServo ] == 180 )
+  {
+  	servo[ liftServo ] = 0;
+  } else if ( servo[ liftServo ] == 0 )
+  {
+  	servo[ liftServo ] = 180;
+  }
+}
+
 void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
 {
   /*
@@ -600,8 +627,7 @@ void dragGoalsIntoScoringZone() //function for dragging goals into scoring zone
   	functions invoked
   
   To Do:
-  	Change method name more appropriate for procedure function
-  	Edit and be more detailed in Inputs and Outputs area
+  	NONE
   
   Author(s):
   	Vale Tolpegin
@@ -636,7 +662,7 @@ task main()
   This is the main task which begins running once the competition starts
   
   To Do:
-  	Add code
+  	NONE
   
   Author(s):
   	Vale Tolpegin
