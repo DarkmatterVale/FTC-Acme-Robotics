@@ -161,4 +161,5 @@ void moveMotor( int encoderValue, int speed )
 
     motor[ liftMotor ] = 0;
   }
+  Wait1MSec(10);
 }
