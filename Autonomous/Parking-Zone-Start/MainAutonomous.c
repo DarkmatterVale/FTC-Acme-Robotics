@@ -585,6 +585,27 @@ void moveManipulator( int encoderValue, int speed )
   }
 }
 
+void switchContainerState()
+{
+  /*
+  Rev 1.0
+  Function that releases the balls from the container/returns the ball container to its original state
+  
+  Inputs:
+  	NONE
+  Outputs:
+  	containerServo
+  
+  To Do:
+	Add code
+  
+  Author(s):
+  	Vale Tolpegin
+  */
+  
+  //Add code here
+}
+
 void findIRBeacon()
 {
 	//if goal right in front of you
