@@ -603,7 +603,13 @@ void switchContainerState()
   	Vale Tolpegin
   */
   
-  //Add code here
+  if ( servo[ liftServo ] == 180 )
+  {
+  	servo[ liftServo ] = 0;
+  } else if ( servo[ liftServo ] == 0 )
+  {
+  	servo[ liftServo ] = 180;
+  }
 }
 
 void findIRBeacon()
