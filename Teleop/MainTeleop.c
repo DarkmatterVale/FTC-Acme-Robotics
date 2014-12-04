@@ -22,6 +22,9 @@
 #define GOAL_HOLDER_ACTIVE 100
 #define GOAL_HOLDER_INACTIVE 0
 
+#define BTNX 0 //Switch to match button numbers
+#define BTNY 1 //Swtich to match button numbers
+
 /*
 
   Joystick 1 will move the robot's drive motors -> Aiden will be the driver
