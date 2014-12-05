@@ -637,7 +637,18 @@ void findIRBeacon()
 		moveRobotLeft( 1440, 70 );
 		
 		//go forward until find the correct spot of center goal
-		forward( 70 );
+		moveRobotForward( 70 );
+		
+		//turn right when find the correct spot
+		
+		//go forward until near the center
+		moveRobotForward( 70 );
+		
+		while( SensorValue[ frontSonar ] >= 20 )
+		{
+		}
+		
+		haltRobot();
 	}
 }
 
@@ -693,6 +704,12 @@ task main()
   
   //findIRBeacon
   findIRBeacon();
+  
+  //drop ball in goal
+  moveManipulator( 1440, 70 );
+  switchContainerState();
+  switchContainerState()
+  moveManipulator( -1440, -70 );
   
   //Knock over center stick
   StartTask( knockOverCenterStick );
