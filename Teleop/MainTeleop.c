@@ -71,8 +71,8 @@ task main()
     getJoystickSettings( joystick );
 
     //set the drive motors
-    motor[ rightDriveMotor ]  = -1 * ( int ) pow( 0.000046 * joystick.joy1_y1, 3 );
-    motor[ leftDriveMotor ] = -1 * ( int ) pow( 0.000046 * joystick.joy1_y2, 3 );
+    motor[ rightDriveMotor ]  = -1 * ( float ) pow( 0.000046 * joystick.joy1_y1, 3 );
+    motor[ leftDriveMotor ] = -1 * ( float ) pow( 0.000046 * joystick.joy1_y2, 3 );
 
     //getjoysticksettings
     getJoystickSettings( joystick );
