@@ -2,6 +2,8 @@ FTC-Acme-Robotics
 =================
 Please read the Program Structure file! This will give you the structure for each part of the program.
 
+********NOTE: THE UPDATED CODE HAS BEEN MOVED TO THE PRIVATE REPOSITORY********
+
 
 Current Version
 ----------------
